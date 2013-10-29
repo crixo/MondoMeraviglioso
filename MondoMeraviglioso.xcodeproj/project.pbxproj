@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4ECC05F9182044F90000CD59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC05F8182044F90000CD59 /* Foundation.framework */; };
+		4ECC05FB182044F90000CD59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC05FA182044F90000CD59 /* CoreGraphics.framework */; };
+		4ECC05FD182044F90000CD59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC05FC182044F90000CD59 /* UIKit.framework */; };
+		4ECC0603182044F90000CD59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC0601182044F90000CD59 /* InfoPlist.strings */; };
+		4ECC0605182044F90000CD59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC0604182044F90000CD59 /* main.m */; };
+		4ECC0609182044F90000CD59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC0608182044F90000CD59 /* AppDelegate.m */; };
+		4ECC060C182044F90000CD59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC060A182044F90000CD59 /* Main.storyboard */; };
+		4ECC060F182044F90000CD59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC060E182044F90000CD59 /* ViewController.m */; };
+		4ECC0611182044F90000CD59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC0610182044F90000CD59 /* Images.xcassets */; };
+		4ECC0618182044F90000CD59 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC0617182044F90000CD59 /* XCTest.framework */; };
+		4ECC0619182044F90000CD59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC05F8182044F90000CD59 /* Foundation.framework */; };
+		4ECC061A182044F90000CD59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC05FC182044F90000CD59 /* UIKit.framework */; };
+		4ECC0622182044F90000CD59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC0620182044F90000CD59 /* InfoPlist.strings */; };
+		4ECC0624182044F90000CD59 /* MondoMeravigliosoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC0623182044F90000CD59 /* MondoMeravigliosoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ECC061B182044F90000CD59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ECC05ED182044F80000CD59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ECC05F4182044F90000CD59;
+			remoteInfo = MondoMeraviglioso;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4ECC05F5182044F90000CD59 /* MondoMeraviglioso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MondoMeraviglioso.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECC05F8182044F90000CD59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4ECC05FA182044F90000CD59 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4ECC05FC182044F90000CD59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4ECC0600182044F90000CD59 /* MondoMeraviglioso-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MondoMeraviglioso-Info.plist"; sourceTree = "<group>"; };
+		4ECC0602182044F90000CD59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4ECC0604182044F90000CD59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4ECC0606182044F90000CD59 /* MondoMeraviglioso-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MondoMeraviglioso-Prefix.pch"; sourceTree = "<group>"; };
+		4ECC0607182044F90000CD59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4ECC0608182044F90000CD59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4ECC060B182044F90000CD59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4ECC060D182044F90000CD59 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4ECC060E182044F90000CD59 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4ECC0610182044F90000CD59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4ECC0616182044F90000CD59 /* MondoMeravigliosoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MondoMeravigliosoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECC0617182044F90000CD59 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4ECC061F182044F90000CD59 /* MondoMeravigliosoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MondoMeravigliosoTests-Info.plist"; sourceTree = "<group>"; };
+		4ECC0621182044F90000CD59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4ECC0623182044F90000CD59 /* MondoMeravigliosoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MondoMeravigliosoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4ECC05F2182044F90000CD59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC05FB182044F90000CD59 /* CoreGraphics.framework in Frameworks */,
+				4ECC05FD182044F90000CD59 /* UIKit.framework in Frameworks */,
+				4ECC05F9182044F90000CD59 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECC0613182044F90000CD59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC0618182044F90000CD59 /* XCTest.framework in Frameworks */,
+				4ECC061A182044F90000CD59 /* UIKit.framework in Frameworks */,
+				4ECC0619182044F90000CD59 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4ECC05EC182044F80000CD59 = {
+			isa = PBXGroup;
+			children = (
+				4ECC05FE182044F90000CD59 /* MondoMeraviglioso */,
+				4ECC061D182044F90000CD59 /* MondoMeravigliosoTests */,
+				4ECC05F7182044F90000CD59 /* Frameworks */,
+				4ECC05F6182044F90000CD59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4ECC05F6182044F90000CD59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC05F5182044F90000CD59 /* MondoMeraviglioso.app */,
+				4ECC0616182044F90000CD59 /* MondoMeravigliosoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4ECC05F7182044F90000CD59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC05F8182044F90000CD59 /* Foundation.framework */,
+				4ECC05FA182044F90000CD59 /* CoreGraphics.framework */,
+				4ECC05FC182044F90000CD59 /* UIKit.framework */,
+				4ECC0617182044F90000CD59 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4ECC05FE182044F90000CD59 /* MondoMeraviglioso */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC0607182044F90000CD59 /* AppDelegate.h */,
+				4ECC0608182044F90000CD59 /* AppDelegate.m */,
+				4ECC060A182044F90000CD59 /* Main.storyboard */,
+				4ECC060D182044F90000CD59 /* ViewController.h */,
+				4ECC060E182044F90000CD59 /* ViewController.m */,
+				4ECC0610182044F90000CD59 /* Images.xcassets */,
+				4ECC05FF182044F90000CD59 /* Supporting Files */,
+			);
+			path = MondoMeraviglioso;
+			sourceTree = "<group>";
+		};
+		4ECC05FF182044F90000CD59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC0600182044F90000CD59 /* MondoMeraviglioso-Info.plist */,
+				4ECC0601182044F90000CD59 /* InfoPlist.strings */,
+				4ECC0604182044F90000CD59 /* main.m */,
+				4ECC0606182044F90000CD59 /* MondoMeraviglioso-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ECC061D182044F90000CD59 /* MondoMeravigliosoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC0623182044F90000CD59 /* MondoMeravigliosoTests.m */,
+				4ECC061E182044F90000CD59 /* Supporting Files */,
+			);
+			path = MondoMeravigliosoTests;
+			sourceTree = "<group>";
+		};
+		4ECC061E182044F90000CD59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC061F182044F90000CD59 /* MondoMeravigliosoTests-Info.plist */,
+				4ECC0620182044F90000CD59 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4ECC05F4182044F90000CD59 /* MondoMeraviglioso */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECC0627182044F90000CD59 /* Build configuration list for PBXNativeTarget "MondoMeraviglioso" */;
+			buildPhases = (
+				4ECC05F1182044F90000CD59 /* Sources */,
+				4ECC05F2182044F90000CD59 /* Frameworks */,
+				4ECC05F3182044F90000CD59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MondoMeraviglioso;
+			productName = MondoMeraviglioso;
+			productReference = 4ECC05F5182044F90000CD59 /* MondoMeraviglioso.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4ECC0615182044F90000CD59 /* MondoMeravigliosoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECC062A182044F90000CD59 /* Build configuration list for PBXNativeTarget "MondoMeravigliosoTests" */;
+			buildPhases = (
+				4ECC0612182044F90000CD59 /* Sources */,
+				4ECC0613182044F90000CD59 /* Frameworks */,
+				4ECC0614182044F90000CD59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ECC061C182044F90000CD59 /* PBXTargetDependency */,
+			);
+			name = MondoMeravigliosoTests;
+			productName = MondoMeravigliosoTests;
+			productReference = 4ECC0616182044F90000CD59 /* MondoMeravigliosoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4ECC05ED182044F80000CD59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = WebProfessor;
+				TargetAttributes = {
+					4ECC0615182044F90000CD59 = {
+						TestTargetID = 4ECC05F4182044F90000CD59;
+					};
+				};
+			};
+			buildConfigurationList = 4ECC05F0182044F80000CD59 /* Build configuration list for PBXProject "MondoMeraviglioso" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4ECC05EC182044F80000CD59;
+			productRefGroup = 4ECC05F6182044F90000CD59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4ECC05F4182044F90000CD59 /* MondoMeraviglioso */,
+				4ECC0615182044F90000CD59 /* MondoMeravigliosoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4ECC05F3182044F90000CD59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC0611182044F90000CD59 /* Images.xcassets in Resources */,
+				4ECC0603182044F90000CD59 /* InfoPlist.strings in Resources */,
+				4ECC060C182044F90000CD59 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECC0614182044F90000CD59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC0622182044F90000CD59 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4ECC05F1182044F90000CD59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC060F182044F90000CD59 /* ViewController.m in Sources */,
+				4ECC0609182044F90000CD59 /* AppDelegate.m in Sources */,
+				4ECC0605182044F90000CD59 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECC0612182044F90000CD59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC0624182044F90000CD59 /* MondoMeravigliosoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ECC061C182044F90000CD59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ECC05F4182044F90000CD59 /* MondoMeraviglioso */;
+			targetProxy = 4ECC061B182044F90000CD59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4ECC0601182044F90000CD59 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECC0602182044F90000CD59 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4ECC060A182044F90000CD59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECC060B182044F90000CD59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4ECC0620182044F90000CD59 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECC0621182044F90000CD59 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4ECC0625182044F90000CD59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4ECC0626182044F90000CD59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4ECC0628182044F90000CD59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MondoMeraviglioso/MondoMeraviglioso-Prefix.pch";
+				INFOPLIST_FILE = "MondoMeraviglioso/MondoMeraviglioso-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4ECC0629182044F90000CD59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MondoMeraviglioso/MondoMeraviglioso-Prefix.pch";
+				INFOPLIST_FILE = "MondoMeraviglioso/MondoMeraviglioso-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4ECC062B182044F90000CD59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MondoMeraviglioso.app/MondoMeraviglioso";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MondoMeraviglioso/MondoMeraviglioso-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MondoMeravigliosoTests/MondoMeravigliosoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4ECC062C182044F90000CD59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MondoMeraviglioso.app/MondoMeraviglioso";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MondoMeraviglioso/MondoMeraviglioso-Prefix.pch";
+				INFOPLIST_FILE = "MondoMeravigliosoTests/MondoMeravigliosoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4ECC05F0182044F80000CD59 /* Build configuration list for PBXProject "MondoMeraviglioso" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECC0625182044F90000CD59 /* Debug */,
+				4ECC0626182044F90000CD59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ECC0627182044F90000CD59 /* Build configuration list for PBXNativeTarget "MondoMeraviglioso" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECC0628182044F90000CD59 /* Debug */,
+				4ECC0629182044F90000CD59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4ECC062A182044F90000CD59 /* Build configuration list for PBXNativeTarget "MondoMeravigliosoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECC062B182044F90000CD59 /* Debug */,
+				4ECC062C182044F90000CD59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4ECC05ED182044F80000CD59 /* Project object */;
+}
