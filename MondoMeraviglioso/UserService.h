@@ -11,14 +11,18 @@
 @class LoginCommand;
 
 @protocol LoginDelegate
-- (void)LoginSucceded:(User *)user;
-- (void)LoginFailed:(NSError *)error;
+- (void)loginSucceded:(User *)user;
+- (void)loginFailed:(NSError *)error;
 @end
 
 @interface UserService : NSObject
 
++ (id)sharedUserService;
+
 @property (weak, nonatomic) id<LoginDelegate> loginDelegate;
 
-- (void) Login:(LoginCommand *)loginCommand;
+- (void) login:(LoginCommand *)loginCommand;
+
+
 
 @end

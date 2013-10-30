@@ -14,7 +14,7 @@
 		4ECC0605182044F90000CD59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC0604182044F90000CD59 /* main.m */; };
 		4ECC0609182044F90000CD59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC0608182044F90000CD59 /* AppDelegate.m */; };
 		4ECC060C182044F90000CD59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC060A182044F90000CD59 /* Main.storyboard */; };
-		4ECC060F182044F90000CD59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC060E182044F90000CD59 /* ViewController.m */; };
+		4ECC060F182044F90000CD59 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC060E182044F90000CD59 /* LoginViewController.m */; };
 		4ECC0611182044F90000CD59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC0610182044F90000CD59 /* Images.xcassets */; };
 		4ECC0618182044F90000CD59 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC0617182044F90000CD59 /* XCTest.framework */; };
 		4ECC0619182044F90000CD59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC05F8182044F90000CD59 /* Foundation.framework */; };
@@ -50,8 +50,8 @@
 		4ECC0607182044F90000CD59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4ECC0608182044F90000CD59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4ECC060B182044F90000CD59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4ECC060D182044F90000CD59 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4ECC060E182044F90000CD59 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4ECC060D182044F90000CD59 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4ECC060E182044F90000CD59 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4ECC0610182044F90000CD59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4ECC0616182044F90000CD59 /* MondoMeravigliosoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MondoMeravigliosoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECC0617182044F90000CD59 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -131,8 +131,8 @@
 				4ECC0607182044F90000CD59 /* AppDelegate.h */,
 				4ECC0608182044F90000CD59 /* AppDelegate.m */,
 				4ECC060A182044F90000CD59 /* Main.storyboard */,
-				4ECC060D182044F90000CD59 /* ViewController.h */,
-				4ECC060E182044F90000CD59 /* ViewController.m */,
+				4ECC060D182044F90000CD59 /* LoginViewController.h */,
+				4ECC060E182044F90000CD59 /* LoginViewController.m */,
 				4ECC0610182044F90000CD59 /* Images.xcassets */,
 				4ECC05FF182044F90000CD59 /* Supporting Files */,
 			);
@@ -289,7 +289,7 @@
 				4ECC063C18206BF10000CD59 /* LoginCommand.m in Sources */,
 				4ECC0630182053130000CD59 /* User.m in Sources */,
 				4ECC0633182057B90000CD59 /* Location.m in Sources */,
-				4ECC060F182044F90000CD59 /* ViewController.m in Sources */,
+				4ECC060F182044F90000CD59 /* LoginViewController.m in Sources */,
 				4ECC0609182044F90000CD59 /* AppDelegate.m in Sources */,
 				4ECC0639182062670000CD59 /* CreateCommand.m in Sources */,
 				4ECC0605182044F90000CD59 /* main.m in Sources */,
