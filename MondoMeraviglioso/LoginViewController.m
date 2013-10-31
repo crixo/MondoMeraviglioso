@@ -10,6 +10,7 @@
 #import "UserService.h"
 #import "LoginCommand.h"
 #import "User.h"
+#import "RegisterViewController.h"
 
 @interface LoginViewController ()
 
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 - (IBAction)performLogin:(id)sender;
+- (IBAction)openRegistration:(id)sender;
 
 @end
 
@@ -51,6 +53,11 @@
     UserService *sharedUserService = [UserService sharedUserService];
     sharedUserService.loginDelegate = self;
     [sharedUserService login:loginCommand];
+}
+
+- (IBAction)openRegistration:(id)sender {
+    RegisterViewController *registerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RegisterViewController"];
+    [self presentViewController:registerViewController animated:NO completion:nil];
 }
 
 - (void) loginFailed:(NSError *)error
