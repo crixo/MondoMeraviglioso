@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GSRadioButtonSetController.h"
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController<GSRadioButtonSetControllerDelegate>
 
 @end
