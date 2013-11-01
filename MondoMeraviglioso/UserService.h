@@ -9,19 +9,29 @@
 #import <Foundation/Foundation.h>
 @class User;
 @class LoginCommand;
+@class RegisterCommand;
+@class UpdateCommand;
 
-@protocol LoginDelegate
+
+@protocol UserServiceDelegate
 - (void)loginSucceded:(User *)user;
-- (void)loginFailed:(NSError *)error;
+- (void)registrationSucceded:(User *)user;
+- (void)updateSucceded:(User *)user;
+
+- (void)commandFailed:(id)command withError:(NSError *)error;
 @end
 
 @interface UserService : NSObject
 
 + (id)sharedUserService;
 
-@property (weak, nonatomic) id<LoginDelegate> loginDelegate;
+@property (weak, nonatomic) id<UserServiceDelegate> delegate;
 
 - (void) login:(LoginCommand *)loginCommand;
+
+- (void) register:(RegisterCommand *)registerCommand;
+
+- (void) update:(UpdateCommand *)updateCommand;
 
 
 

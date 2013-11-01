@@ -41,13 +41,14 @@
     {
         User *user = [[User alloc]init];
         user.key = [[NSUUID UUID] UUIDString];
+        user.email = loginCommand.email;
         
-        [self.loginDelegate loginSucceded:user];
+        [self.delegate loginSucceded:user];
     }
     else
     {
         NSError *error =  [NSError errorWithDomain:@"myDomain" code:100 userInfo:nil];
-        [self.loginDelegate loginFailed:error];
+        [self.delegate commandFailed:loginCommand withError:error];
     }
 }
 

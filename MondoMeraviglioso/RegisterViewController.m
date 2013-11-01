@@ -8,15 +8,20 @@
 
 #import "RegisterViewController.h"
 #import "User.h"
+#import "LoginViewController.h"
 
 @interface RegisterViewController ()
+
 @property (strong, nonatomic) IBOutlet GSRadioButtonSetController *userTypeRadioButtonSet;
+
 - (IBAction)register:(id)sender;
+- (IBAction)goBackToLogin:(id)sender;
 
 @end
 
 @implementation RegisterViewController{
     NSUInteger *selectedUserTypeIndex;
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,8 +46,6 @@
     
     [self.userTypesRadioButtonGroup addSubview:group];    
      */
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,4 +72,9 @@
     
     NSLog(@"selected user type %d", userType);
 }
+
+
+- (IBAction)goBackToLogin:(id)sender {
+        LoginViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [self presentViewController:loginViewController animated:NO completion:nil];}
 @end

@@ -31,6 +31,10 @@
 		9746C3D51823C26D009FDF0B /* button-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9746C3D11823C26D009FDF0B /* button-off@2x.png */; };
 		9746C3D61823C26D009FDF0B /* button-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9746C3D21823C26D009FDF0B /* button-on.png */; };
 		9746C3D71823C26D009FDF0B /* button-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9746C3D31823C26D009FDF0B /* button-on@2x.png */; };
+		9746C3DA18242181009FDF0B /* RegisterCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 9746C3D918242181009FDF0B /* RegisterCommand.m */; };
+		9746C3DD1824219A009FDF0B /* UpdateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 9746C3DC1824219A009FDF0B /* UpdateCommand.m */; };
+		9746C3E018242F82009FDF0B /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9746C3DF18242F82009FDF0B /* UserRepository.m */; };
+		9746C3E2182431EF009FDF0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9746C3E1182431EF009FDF0B /* CoreLocation.framework */; };
 		9769DE4918230947003A6F50 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9769DE4818230947003A6F50 /* RegisterViewController.m */; };
 		9769DE5218230B25003A6F50 /* MIRadioButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 9769DE4D18230B25003A6F50 /* MIRadioButtonGroup.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9769DE5318230B25003A6F50 /* MIRadioButtonGroupAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9769DE4F18230B25003A6F50 /* MIRadioButtonGroupAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -84,6 +88,13 @@
 		9746C3D11823C26D009FDF0B /* button-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-off@2x.png"; sourceTree = "<group>"; };
 		9746C3D21823C26D009FDF0B /* button-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-on.png"; sourceTree = "<group>"; };
 		9746C3D31823C26D009FDF0B /* button-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-on@2x.png"; sourceTree = "<group>"; };
+		9746C3D818242181009FDF0B /* RegisterCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterCommand.h; sourceTree = "<group>"; };
+		9746C3D918242181009FDF0B /* RegisterCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterCommand.m; sourceTree = "<group>"; };
+		9746C3DB1824219A009FDF0B /* UpdateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCommand.h; sourceTree = "<group>"; };
+		9746C3DC1824219A009FDF0B /* UpdateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCommand.m; sourceTree = "<group>"; };
+		9746C3DE18242F81009FDF0B /* UserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepository.h; sourceTree = "<group>"; };
+		9746C3DF18242F82009FDF0B /* UserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepository.m; sourceTree = "<group>"; };
+		9746C3E1182431EF009FDF0B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9769DE4718230947003A6F50 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		9769DE4818230947003A6F50 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		9769DE4C18230B25003A6F50 /* MIRadioButtonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRadioButtonGroup.h; sourceTree = "<group>"; };
@@ -99,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9746C3E2182431EF009FDF0B /* CoreLocation.framework in Frameworks */,
 				4ECC05FB182044F90000CD59 /* CoreGraphics.framework in Frameworks */,
 				4ECC05FD182044F90000CD59 /* UIKit.framework in Frameworks */,
 				4ECC05F9182044F90000CD59 /* Foundation.framework in Frameworks */,
@@ -140,6 +152,7 @@
 		4ECC05F7182044F90000CD59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9746C3E1182431EF009FDF0B /* CoreLocation.framework */,
 				4ECC05F8182044F90000CD59 /* Foundation.framework */,
 				4ECC05FA182044F90000CD59 /* CoreGraphics.framework */,
 				4ECC05FC182044F90000CD59 /* UIKit.framework */,
@@ -208,6 +221,12 @@
 				4ECC063B18206BF10000CD59 /* LoginCommand.m */,
 				4ECC063D18206C0E0000CD59 /* UserService.h */,
 				4ECC063E18206C0E0000CD59 /* UserService.m */,
+				9746C3D818242181009FDF0B /* RegisterCommand.h */,
+				9746C3D918242181009FDF0B /* RegisterCommand.m */,
+				9746C3DB1824219A009FDF0B /* UpdateCommand.h */,
+				9746C3DC1824219A009FDF0B /* UpdateCommand.m */,
+				9746C3DE18242F81009FDF0B /* UserRepository.h */,
+				9746C3DF18242F82009FDF0B /* UserRepository.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -358,10 +377,13 @@
 				4ECC063C18206BF10000CD59 /* LoginCommand.m in Sources */,
 				4ECC0630182053130000CD59 /* User.m in Sources */,
 				9746C3CE1823C016009FDF0B /* GSRadioButtonSetController.m in Sources */,
+				9746C3DA18242181009FDF0B /* RegisterCommand.m in Sources */,
 				4ECC0633182057B90000CD59 /* Location.m in Sources */,
 				9769DE4918230947003A6F50 /* RegisterViewController.m in Sources */,
+				9746C3E018242F82009FDF0B /* UserRepository.m in Sources */,
 				9769DE5218230B25003A6F50 /* MIRadioButtonGroup.m in Sources */,
 				4ECC060F182044F90000CD59 /* LoginViewController.m in Sources */,
+				9746C3DD1824219A009FDF0B /* UpdateCommand.m in Sources */,
 				4ECC0609182044F90000CD59 /* AppDelegate.m in Sources */,
 				4ECC0639182062670000CD59 /* CreateCommand.m in Sources */,
 				4ECC0605182044F90000CD59 /* main.m in Sources */,

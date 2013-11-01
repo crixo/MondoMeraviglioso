@@ -51,7 +51,7 @@
     loginCommand.password = txtPassword.text;
     
     UserService *sharedUserService = [UserService sharedUserService];
-    sharedUserService.loginDelegate = self;
+    sharedUserService.delegate = self;
     [sharedUserService login:loginCommand];
 }
 
@@ -60,7 +60,7 @@
     [self presentViewController:registerViewController animated:NO completion:nil];
 }
 
-- (void) loginFailed:(NSError *)error
+- (void) commandFailed:(id)command withError:(NSError *)error
 {
     [self.spinner stopAnimating];
     NSLog(@"%@",[error localizedDescription]);

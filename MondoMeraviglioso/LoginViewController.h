@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "UserService.h"
 
-@interface LoginViewController : UIViewController <UITextFieldDelegate, LoginDelegate>
+@interface LoginViewController : UIViewController <UITextFieldDelegate, UserServiceDelegate>
 
 @end
