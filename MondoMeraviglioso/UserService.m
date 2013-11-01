@@ -9,6 +9,7 @@
 #import "UserService.h"
 #import "LoginCommand.h"
 #import "User.h"
+#import "UserRepository.h"
 
 @implementation UserService
 
@@ -37,12 +38,10 @@
 
 - (void) login:(LoginCommand *)loginCommand
 {
-    if([loginCommand.email hasPrefix:@"test"])
+    UserRepository *sharedUserRepository = [UserRepository sharedUserRepository];
+    User *user = [sharedUserRepository FindByCredentials:loginCommand.email :loginCommand.password];
+    if(user)
     {
-        User *user = [[User alloc]init];
-        user.key = [[NSUUID UUID] UUIDString];
-        user.email = loginCommand.email;
-        
         [self.delegate loginSucceded:user];
     }
     else

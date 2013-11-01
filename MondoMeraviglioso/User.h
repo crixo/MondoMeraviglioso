@@ -23,4 +23,6 @@ typedef enum UserType{
 @property (nonatomic, strong) NSString *thumbnailUrl;
 @property (nonatomic, strong) Location *location;
 
+- (User*)initWithMandatory:(NSString*)email :(NSString*)screenName :(UserType)type;
+
 @end

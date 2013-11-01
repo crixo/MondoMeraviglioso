@@ -10,5 +10,14 @@
 
 @implementation User
 
+- (User*)initWithMandatory:(NSString*)email :(NSString*)screenName :(UserType)type
+{
+    self = [super init];
+    self.email = email;
+    self.screenName = screenName;
+    self.type = type;
+    return self;
+}
+
 
 @end

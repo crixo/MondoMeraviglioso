@@ -12,7 +12,10 @@
 
 @interface UserRepository : NSObject
 
++ (id)sharedUserRepository;
+
 - (User*) FindByEmail:(NSString *) email;
+- (User*) FindByCredentials:(NSString *) email :(NSString *)password;
 - (NSArray *) FindByLocation:(CLLocation*) location inARangeOf:(int) kilometers;
 
 @end
