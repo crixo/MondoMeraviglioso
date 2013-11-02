@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Location;
+@class CLLocation;
 
 typedef enum UserType{
     Couple
@@ -21,7 +21,7 @@ typedef enum UserType{
 @property (nonatomic, assign) UserType type;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *thumbnailUrl;
-@property (nonatomic, strong) Location *location;
+@property (nonatomic, strong) CLLocation *location;
 
 - (User*)initWithMandatory:(NSString*)email :(NSString*)screenName :(UserType)type;
 

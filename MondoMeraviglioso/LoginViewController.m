@@ -11,6 +11,7 @@
 #import "LoginCommand.h"
 #import "User.h"
 #import "RegisterViewController.h"
+#import "MainViewController.h"
 
 @interface LoginViewController ()
 
@@ -70,6 +71,8 @@
 {
     [self.spinner stopAnimating];
     NSLog(@"user %@ logged in", user.key);
+    MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    [self presentViewController:mainViewController animated:NO completion:nil];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{

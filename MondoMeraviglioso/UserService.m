@@ -10,8 +10,13 @@
 #import "LoginCommand.h"
 #import "User.h"
 #import "UserRepository.h"
+#import "RegisterCommand.h"
+#import "LocalizationManager.h"
 
 @implementation UserService
+{
+    NSMutableArray *users;
+}
 
 #pragma mark Singleton Methods
 
@@ -24,9 +29,13 @@
     return sharedUserService;
 }
 
-- (id)init {
-    if (self = [super init]) {
-        
+- (id)init
+{
+    if (self = [super init])
+    {
+        users= [NSMutableArray arrayWithObjects:
+                [[User alloc]initWithMandatory:@"test1@wp.it" :@"test1" :Couple],
+                [[User alloc]initWithMandatory:@"test2@wp.it" :@"test2" :Couple], nil];
     }
     return self;
 }
@@ -38,10 +47,11 @@
 
 - (void) login:(LoginCommand *)loginCommand
 {
-    UserRepository *sharedUserRepository = [UserRepository sharedUserRepository];
-    User *user = [sharedUserRepository FindByCredentials:loginCommand.email :loginCommand.password];
+    User *user = [self findByCredentials:loginCommand.email :loginCommand.password];
     if(user)
     {
+        LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
+        user.location = [sharedLocationManager getMyCurrentLocation];
         [self.delegate loginSucceded:user];
     }
     else
@@ -49,6 +59,28 @@
         NSError *error =  [NSError errorWithDomain:@"myDomain" code:100 userInfo:nil];
         [self.delegate commandFailed:loginCommand withError:error];
     }
+}
+
+- (void) register:(RegisterCommand *)registerCommand
+{
+    User *user = [[User alloc]initWithMandatory:registerCommand.email :registerCommand.screenName :registerCommand.type];
+    LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
+    user.location = [sharedLocationManager getMyCurrentLocation];
+    
+    [users addObject:user];
+    
+}
+
+- (User*) findByCredentials:(NSString *)email :(NSString *)password
+{
+    for (User *user in users)
+    {
+        if([email isEqualToString:user.email])
+        {
+            return user;
+        }
+    }
+    return nil;
 }
 
 @end

@@ -11,6 +11,7 @@
 @class LoginCommand;
 @class RegisterCommand;
 @class UpdateCommand;
+@class CLLocation;
 
 
 @protocol UserServiceDelegate
@@ -33,6 +34,6 @@
 
 - (void) update:(UpdateCommand *)updateCommand;
 
-
+- (NSArray *) GetByLocation:(CLLocation*) location inARangeOf:(int) kilometers;
 
 @end
