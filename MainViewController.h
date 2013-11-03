@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocalizationManager.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <LocalizationManagerDelegate>
 
 @end

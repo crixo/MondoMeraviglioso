@@ -9,10 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+@protocol LocalizationManagerDelegate
+
+- (void) locationChanged:(CLLocation *)newLocation;
+
+@end
+
 @interface LocalizationManager : NSObject <CLLocationManagerDelegate>
 
 + (id)sharedLocalizationManager;
 
+@property (weak, nonatomic) id<LocalizationManagerDelegate> delegate;
+
 - (CLLocation *) getMyCurrentLocation;
+
+-(void) stop;
+
+-(void) start;
 
 @end

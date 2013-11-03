@@ -38,13 +38,27 @@
         // preferring to use our last cached results, if any.
        _locationManager.distanceFilter = 50;
         //[_locationManager startUpdatingLocation];
-        [_locationManager startMonitoringSignificantLocationChanges];
+        //[_locationManager startMonitoringSignificantLocationChanges];
     }
     return self;
 }
 
 - (void)dealloc {
     // Should never be called, but just here for clarity really.
+}
+
+- (void) start
+{
+    NSLog(@"locationManager -> start");
+    [_locationManager startUpdatingLocation];
+}
+
+
+- (void) stop
+{
+    
+    NSLog(@"locationManager -> stop");
+    [_locationManager stopUpdatingLocation];
 }
 
 - (CLLocation*) getMyCurrentLocation
@@ -56,16 +70,24 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    if(oldLocation)
+    {
+        NSLog(@"Old location: %f, %f",
+          oldLocation.coordinate.latitude,
+          oldLocation.coordinate.longitude);
+    }
+    
     if (!oldLocation ||
         (oldLocation.coordinate.latitude != newLocation.coordinate.latitude &&
          oldLocation.coordinate.longitude != newLocation.coordinate.longitude)) {
             
             // To-do, add code for triggering view controller update
-            NSLog(@"Got location: %f, %f",
+            NSLog(@"New location: %f, %f",
                   newLocation.coordinate.latitude,
                   newLocation.coordinate.longitude);
             
             _currentLocation = newLocation;
+            [self.delegate locationChanged:newLocation];
         }
 }
 

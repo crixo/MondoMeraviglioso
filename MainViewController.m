@@ -13,6 +13,7 @@
 @interface MainViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *myCurrentLocationLabel;
 - (IBAction)getCurrentLocation:(id)sender;
+- (IBAction)getTrackedLocation:(id)sender;
 
 @end
 
@@ -42,9 +43,22 @@
 - (IBAction)getCurrentLocation:(id)sender
 {
     LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
+    [sharedLocationManager start];
+
+}
+
+-(void) locationChanged:(CLLocation *)newLocation
+{
+    self.myCurrentLocationLabel.text = [NSString stringWithFormat:@"New location: %f, %f",
+                                        newLocation.coordinate.latitude,
+                                        newLocation.coordinate.longitude];
+}
+
+- (IBAction)getTrackedLocation:(id)sender {
+    LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
     CLLocation *currentLocation = [sharedLocationManager getMyCurrentLocation];
-    self.myCurrentLocationLabel.text = [NSString stringWithFormat:@"Here I'm: %f, %f",
-                                                         currentLocation.coordinate.latitude,
-                                                         currentLocation.coordinate.longitude];
+    self.myCurrentLocationLabel.text = [NSString stringWithFormat:@"Tracked location: %f, %f",
+                                        currentLocation.coordinate.latitude,
+                                        currentLocation.coordinate.longitude];
 }
 @end

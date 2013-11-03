@@ -84,8 +84,8 @@
 		4ECC063B18206BF10000CD59 /* LoginCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCommand.m; sourceTree = "<group>"; };
 		4ECC063D18206C0E0000CD59 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
 		4ECC063E18206C0E0000CD59 /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
-		97094F0B1825934000A881BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		97094F0C1825934000A881BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		97094F0B1825934000A881BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
+		97094F0C1825934000A881BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		9746C3CC1823C016009FDF0B /* GSRadioButtonSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSRadioButtonSetController.h; sourceTree = "<group>"; };
 		9746C3CD1823C016009FDF0B /* GSRadioButtonSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSRadioButtonSetController.m; sourceTree = "<group>"; };
 		9746C3D01823C26D009FDF0B /* button-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-off.png"; sourceTree = "<group>"; };
@@ -139,8 +139,6 @@
 		4ECC05EC182044F80000CD59 = {
 			isa = PBXGroup;
 			children = (
-				97094F0B1825934000A881BA /* MainViewController.h */,
-				97094F0C1825934000A881BA /* MainViewController.m */,
 				4ECC05FE182044F90000CD59 /* MondoMeraviglioso */,
 				4ECC061D182044F90000CD59 /* MondoMeravigliosoTests */,
 				4ECC05F7182044F90000CD59 /* Frameworks */,
@@ -172,6 +170,8 @@
 		4ECC05FE182044F90000CD59 /* MondoMeraviglioso */ = {
 			isa = PBXGroup;
 			children = (
+				97094F0B1825934000A881BA /* MainViewController.h */,
+				97094F0C1825934000A881BA /* MainViewController.m */,
 				97B6DE921825851C001AC9E3 /* Localizations */,
 				9769DE4A18230AF8003A6F50 /* UI */,
 				4ECC062D1820521B0000CD59 /* Users */,

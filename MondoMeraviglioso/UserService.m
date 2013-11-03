@@ -51,7 +51,7 @@
     if(user)
     {
         LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-        user.location = [sharedLocationManager getMyCurrentLocation];
+        [sharedLocationManager start];
         [self.delegate loginSucceded:user];
     }
     else
@@ -65,7 +65,7 @@
 {
     User *user = [[User alloc]initWithMandatory:registerCommand.email :registerCommand.screenName :registerCommand.type];
     LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-    user.location = [sharedLocationManager getMyCurrentLocation];
+    [sharedLocationManager start];
     
     [users addObject:user];
     
