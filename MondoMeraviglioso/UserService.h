@@ -28,6 +28,8 @@
 
 @property (weak, nonatomic) id<UserServiceDelegate> delegate;
 
+@property (strong, nonatomic) User *currentUser;
+
 - (void) login:(LoginCommand *)loginCommand;
 
 - (void) register:(RegisterCommand *)registerCommand;

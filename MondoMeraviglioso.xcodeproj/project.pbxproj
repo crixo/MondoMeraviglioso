@@ -170,20 +170,20 @@
 		4ECC05FE182044F90000CD59 /* MondoMeraviglioso */ = {
 			isa = PBXGroup;
 			children = (
-				97094F0B1825934000A881BA /* MainViewController.h */,
-				97094F0C1825934000A881BA /* MainViewController.m */,
-				97B6DE921825851C001AC9E3 /* Localizations */,
-				9769DE4A18230AF8003A6F50 /* UI */,
-				4ECC062D1820521B0000CD59 /* Users */,
 				4ECC0607182044F90000CD59 /* AppDelegate.h */,
 				4ECC0608182044F90000CD59 /* AppDelegate.m */,
-				4ECC060A182044F90000CD59 /* Main.storyboard */,
+				4ECC0610182044F90000CD59 /* Images.xcassets */,
+				97B6DE921825851C001AC9E3 /* Localizations */,
 				4ECC060D182044F90000CD59 /* LoginViewController.h */,
 				4ECC060E182044F90000CD59 /* LoginViewController.m */,
-				4ECC0610182044F90000CD59 /* Images.xcassets */,
-				4ECC05FF182044F90000CD59 /* Supporting Files */,
+				4ECC060A182044F90000CD59 /* Main.storyboard */,
+				97094F0B1825934000A881BA /* MainViewController.h */,
+				97094F0C1825934000A881BA /* MainViewController.m */,
 				9769DE4718230947003A6F50 /* RegisterViewController.h */,
 				9769DE4818230947003A6F50 /* RegisterViewController.m */,
+				4ECC05FF182044F90000CD59 /* Supporting Files */,
+				9769DE4A18230AF8003A6F50 /* UI */,
+				4ECC062D1820521B0000CD59 /* Users */,
 			);
 			path = MondoMeraviglioso;
 			sourceTree = "<group>";

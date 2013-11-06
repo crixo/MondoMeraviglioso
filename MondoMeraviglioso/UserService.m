@@ -44,14 +44,21 @@
     // Should never be called, but just here for clarity really.
 }
 
+- (void) setCurrentUser:(id)user
+{
+    _currentUser = user;
+    
+    LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
+    [sharedLocationManager.locationManager startUpdatingLocation];
+}
+
 
 - (void) login:(LoginCommand *)loginCommand
 {
     User *user = [self findByCredentials:loginCommand.email :loginCommand.password];
     if(user)
     {
-        LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-        [sharedLocationManager start];
+        self.currentUser = user;
         [self.delegate loginSucceded:user];
     }
     else
@@ -64,8 +71,8 @@
 - (void) register:(RegisterCommand *)registerCommand
 {
     User *user = [[User alloc]initWithMandatory:registerCommand.email :registerCommand.screenName :registerCommand.type];
-    LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-    [sharedLocationManager start];
+    
+    self.currentUser = user;
     
     [users addObject:user];
     

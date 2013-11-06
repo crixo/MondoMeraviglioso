@@ -21,10 +21,8 @@
 
 @property (weak, nonatomic) id<LocalizationManagerDelegate> delegate;
 
-- (CLLocation *) getMyCurrentLocation;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
--(void) stop;
-
--(void) start;
+-(void) restart;
 
 @end

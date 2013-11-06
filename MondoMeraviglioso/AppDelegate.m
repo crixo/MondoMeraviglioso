@@ -12,8 +12,6 @@
 
 @implementation AppDelegate
 {
-    NSTimer *updateLocationTimer;
-    UIBackgroundTaskIdentifier bgTask;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -31,25 +29,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-            LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-        [sharedLocationManager stop];
-        
-        UIApplication*    app = [UIApplication sharedApplication];
-        
-        bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
-            [app endBackgroundTask:bgTask];
-            bgTask = UIBackgroundTaskInvalid;
-        }];
-    
-    
-    NSTimeInterval intervalBackgroundUpdate = 60;
-        updateLocationTimer = [NSTimer scheduledTimerWithTimeInterval:intervalBackgroundUpdate
-                                                      target:sharedLocationManager
-                                                    selector:@selector(start)
-                                                    userInfo:nil
-                                                     repeats:YES];
-    
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.  
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

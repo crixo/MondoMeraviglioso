@@ -13,7 +13,6 @@
 @implementation LocalizationManager
 {
     CLLocation* _currentLocation;
-    CLLocationManager *_locationManager;
 }
 #pragma mark Singleton Methods
 
@@ -33,11 +32,11 @@
     {
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
-        _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
         // We don't want to be notified of small changes in location,
         // preferring to use our last cached results, if any.
        _locationManager.distanceFilter = 50;
-        //[_locationManager startUpdatingLocation];
+        [_locationManager startUpdatingLocation];
         //[_locationManager startMonitoringSignificantLocationChanges];
     }
     return self;
@@ -47,48 +46,42 @@
     // Should never be called, but just here for clarity really.
 }
 
-- (void) start
+- (void) restart
 {
-    NSLog(@"locationManager -> start");
-    [_locationManager startUpdatingLocation];
-}
-
-
-- (void) stop
-{
-    
-    NSLog(@"locationManager -> stop");
+    NSLog(@"locationManager -> restart");
     [_locationManager stopUpdatingLocation];
-}
-
-- (CLLocation*) getMyCurrentLocation
-{
-    return _currentLocation;
+    [_locationManager startUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    if (UIApplication.sharedApplication.applicationState == UIApplicationStateActive)
+    {
+        NSLog(@"New location: %f, %f",
+              newLocation.coordinate.latitude,
+              newLocation.coordinate.longitude);
+        
+        if (!oldLocation ||
+            (oldLocation.coordinate.latitude != newLocation.coordinate.latitude &&
+             oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
+        {
+            [self.delegate locationChanged:newLocation];
+        }
+        
+    }
+    else
+    {
+        NSLog(@"App is backgrounded. New location is %@", newLocation);
+    }
+    
     if(oldLocation)
     {
         NSLog(@"Old location: %f, %f",
           oldLocation.coordinate.latitude,
           oldLocation.coordinate.longitude);
     }
-    
-    if (!oldLocation ||
-        (oldLocation.coordinate.latitude != newLocation.coordinate.latitude &&
-         oldLocation.coordinate.longitude != newLocation.coordinate.longitude)) {
-            
-            // To-do, add code for triggering view controller update
-            NSLog(@"New location: %f, %f",
-                  newLocation.coordinate.latitude,
-                  newLocation.coordinate.longitude);
-            
-            _currentLocation = newLocation;
-            [self.delegate locationChanged:newLocation];
-        }
 }
 
 - (void)locationManager:(CLLocationManager *)manager

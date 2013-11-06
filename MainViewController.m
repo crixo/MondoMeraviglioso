@@ -40,13 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)getCurrentLocation:(id)sender
-{
-    LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-    [sharedLocationManager start];
-
-}
-
 -(void) locationChanged:(CLLocation *)newLocation
 {
     self.myCurrentLocationLabel.text = [NSString stringWithFormat:@"New location: %f, %f",
@@ -56,7 +49,7 @@
 
 - (IBAction)getTrackedLocation:(id)sender {
     LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-    CLLocation *currentLocation = [sharedLocationManager getMyCurrentLocation];
+    CLLocation *currentLocation = sharedLocationManager.locationManager.location;
     self.myCurrentLocationLabel.text = [NSString stringWithFormat:@"Tracked location: %f, %f",
                                         currentLocation.coordinate.latitude,
                                         currentLocation.coordinate.longitude];
