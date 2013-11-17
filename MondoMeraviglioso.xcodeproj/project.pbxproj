@@ -42,6 +42,13 @@
 		9769DE5418230B25003A6F50 /* radio-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 9769DE5018230B25003A6F50 /* radio-off.png */; };
 		9769DE5518230B25003A6F50 /* radio-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9769DE5118230B25003A6F50 /* radio-on.png */; };
 		979E02C7183913FA00B932D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979E02C6183913FA00B932D9 /* MapKit.framework */; };
+		979E02D818396BC500B932D9 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02CB18396BC500B932D9 /* SBJsonParser.m */; };
+		979E02D918396BC500B932D9 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02CD18396BC500B932D9 /* SBJsonStreamParser.m */; };
+		979E02DA18396BC500B932D9 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02CF18396BC500B932D9 /* SBJsonStreamParserState.m */; };
+		979E02DB18396BC500B932D9 /* SBJsonStreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D118396BC500B932D9 /* SBJsonStreamTokeniser.m */; };
+		979E02DC18396BC500B932D9 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D318396BC500B932D9 /* SBJsonStreamWriter.m */; };
+		979E02DD18396BC500B932D9 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D518396BC500B932D9 /* SBJsonStreamWriterState.m */; };
+		979E02DE18396BC500B932D9 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D718396BC500B932D9 /* SBJsonWriter.m */; };
 		97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B6DE941825853D001AC9E3 /* LocalizationManager.m */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +116,21 @@
 		9769DE5018230B25003A6F50 /* radio-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-off.png"; sourceTree = "<group>"; };
 		9769DE5118230B25003A6F50 /* radio-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-on.png"; sourceTree = "<group>"; };
 		979E02C6183913FA00B932D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		979E02C918396BC500B932D9 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		979E02CA18396BC500B932D9 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		979E02CB18396BC500B932D9 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		979E02CC18396BC500B932D9 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		979E02CD18396BC500B932D9 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		979E02CE18396BC500B932D9 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		979E02CF18396BC500B932D9 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		979E02D018396BC500B932D9 /* SBJsonStreamTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamTokeniser.h; sourceTree = "<group>"; };
+		979E02D118396BC500B932D9 /* SBJsonStreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamTokeniser.m; sourceTree = "<group>"; };
+		979E02D218396BC500B932D9 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		979E02D318396BC500B932D9 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		979E02D418396BC500B932D9 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		979E02D518396BC500B932D9 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		979E02D618396BC500B932D9 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		979E02D718396BC500B932D9 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		97B6DE931825853D001AC9E3 /* LocalizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationManager.h; sourceTree = "<group>"; };
 		97B6DE941825853D001AC9E3 /* LocalizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +164,7 @@
 		4ECC05EC182044F80000CD59 = {
 			isa = PBXGroup;
 			children = (
+				979E02C818396BC500B932D9 /* SBJson */,
 				4ECC05FE182044F90000CD59 /* MondoMeraviglioso */,
 				4ECC061D182044F90000CD59 /* MondoMeravigliosoTests */,
 				4ECC05F7182044F90000CD59 /* Frameworks */,
@@ -279,6 +302,28 @@
 			name = RadioButtons;
 			sourceTree = "<group>";
 		};
+		979E02C818396BC500B932D9 /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				979E02C918396BC500B932D9 /* SBJson.h */,
+				979E02CA18396BC500B932D9 /* SBJsonParser.h */,
+				979E02CB18396BC500B932D9 /* SBJsonParser.m */,
+				979E02CC18396BC500B932D9 /* SBJsonStreamParser.h */,
+				979E02CD18396BC500B932D9 /* SBJsonStreamParser.m */,
+				979E02CE18396BC500B932D9 /* SBJsonStreamParserState.h */,
+				979E02CF18396BC500B932D9 /* SBJsonStreamParserState.m */,
+				979E02D018396BC500B932D9 /* SBJsonStreamTokeniser.h */,
+				979E02D118396BC500B932D9 /* SBJsonStreamTokeniser.m */,
+				979E02D218396BC500B932D9 /* SBJsonStreamWriter.h */,
+				979E02D318396BC500B932D9 /* SBJsonStreamWriter.m */,
+				979E02D418396BC500B932D9 /* SBJsonStreamWriterState.h */,
+				979E02D518396BC500B932D9 /* SBJsonStreamWriterState.m */,
+				979E02D618396BC500B932D9 /* SBJsonWriter.h */,
+				979E02D718396BC500B932D9 /* SBJsonWriter.m */,
+			);
+			path = SBJson;
+			sourceTree = "<group>";
+		};
 		97B6DE921825851C001AC9E3 /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,15 +445,22 @@
 				4ECC0630182053130000CD59 /* User.m in Sources */,
 				97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */,
 				9746C3CE1823C016009FDF0B /* GSRadioButtonSetController.m in Sources */,
+				979E02DB18396BC500B932D9 /* SBJsonStreamTokeniser.m in Sources */,
 				9746C3DA18242181009FDF0B /* RegisterCommand.m in Sources */,
 				97094F0D1825934000A881BA /* MainViewController.m in Sources */,
+				979E02DC18396BC500B932D9 /* SBJsonStreamWriter.m in Sources */,
 				4ECC0633182057B90000CD59 /* Location.m in Sources */,
+				979E02DD18396BC500B932D9 /* SBJsonStreamWriterState.m in Sources */,
+				979E02D918396BC500B932D9 /* SBJsonStreamParser.m in Sources */,
+				979E02DE18396BC500B932D9 /* SBJsonWriter.m in Sources */,
 				9769DE4918230947003A6F50 /* RegisterViewController.m in Sources */,
 				9746C3E018242F82009FDF0B /* UserRepository.m in Sources */,
 				9769DE5218230B25003A6F50 /* MIRadioButtonGroup.m in Sources */,
+				979E02DA18396BC500B932D9 /* SBJsonStreamParserState.m in Sources */,
 				4ECC060F182044F90000CD59 /* LoginViewController.m in Sources */,
 				9746C3DD1824219A009FDF0B /* UpdateCommand.m in Sources */,
 				4ECC0609182044F90000CD59 /* AppDelegate.m in Sources */,
+				979E02D818396BC500B932D9 /* SBJsonParser.m in Sources */,
 				4ECC0639182062670000CD59 /* CreateCommand.m in Sources */,
 				4ECC0605182044F90000CD59 /* main.m in Sources */,
 			);
