@@ -19,5 +19,15 @@
     return self;
 }
 
+- (User*)initWithLocation:(NSString*)email :(NSString*)screenName :(UserType)type :(CLLocation *) location
+{
+    self = [super init];
+    self.email = email;
+    self.screenName = screenName;
+    self.type = type;
+    self.location = location;
+    return self;
+}
+
 
 @end

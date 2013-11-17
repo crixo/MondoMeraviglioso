@@ -41,6 +41,7 @@
 		9769DE5318230B25003A6F50 /* MIRadioButtonGroupAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9769DE4F18230B25003A6F50 /* MIRadioButtonGroupAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9769DE5418230B25003A6F50 /* radio-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 9769DE5018230B25003A6F50 /* radio-off.png */; };
 		9769DE5518230B25003A6F50 /* radio-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9769DE5118230B25003A6F50 /* radio-on.png */; };
+		979E02C7183913FA00B932D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979E02C6183913FA00B932D9 /* MapKit.framework */; };
 		97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B6DE941825853D001AC9E3 /* LocalizationManager.m */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		9769DE4F18230B25003A6F50 /* MIRadioButtonGroupAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRadioButtonGroupAppDelegate.m; sourceTree = "<group>"; };
 		9769DE5018230B25003A6F50 /* radio-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-off.png"; sourceTree = "<group>"; };
 		9769DE5118230B25003A6F50 /* radio-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-on.png"; sourceTree = "<group>"; };
+		979E02C6183913FA00B932D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		97B6DE931825853D001AC9E3 /* LocalizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationManager.h; sourceTree = "<group>"; };
 		97B6DE941825853D001AC9E3 /* LocalizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				979E02C7183913FA00B932D9 /* MapKit.framework in Frameworks */,
 				9746C3E2182431EF009FDF0B /* CoreLocation.framework in Frameworks */,
 				4ECC05FB182044F90000CD59 /* CoreGraphics.framework in Frameworks */,
 				4ECC05FD182044F90000CD59 /* UIKit.framework in Frameworks */,
@@ -158,6 +161,7 @@
 		4ECC05F7182044F90000CD59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				979E02C6183913FA00B932D9 /* MapKit.framework */,
 				9746C3E1182431EF009FDF0B /* CoreLocation.framework */,
 				4ECC05F8182044F90000CD59 /* Foundation.framework */,
 				4ECC05FA182044F90000CD59 /* CoreGraphics.framework */,

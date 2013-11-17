@@ -9,13 +9,18 @@
 #import "MainViewController.h"
 #import "LocalizationManager.h"
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+#import "UserService.h"
+#import "User.h"
 
 @interface MainViewController ()
-@property (strong, nonatomic) IBOutlet UILabel *myCurrentLocationLabel;
-- (IBAction)getCurrentLocation:(id)sender;
-- (IBAction)getTrackedLocation:(id)sender;
+
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+- (IBAction)refresh:(id)sender;
 
 @end
+
+#define METERS_PER_MILE 1609.344
 
 @implementation MainViewController
 
@@ -32,6 +37,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [self.mapView setShowsUserLocation:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [self showMap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,18 +52,48 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) locationChanged:(CLLocation *)newLocation
-{
-    self.myCurrentLocationLabel.text = [NSString stringWithFormat:@"New location: %f, %f",
-                                        newLocation.coordinate.latitude,
-                                        newLocation.coordinate.longitude];
+- (IBAction)refresh:(id)sender {
+    // 1
+    MKCoordinateRegion mapRegion = [self.mapView region];
+    CLLocationCoordinate2D centerLocation = mapRegion.center;
+    
+    [self showMap];
 }
 
-- (IBAction)getTrackedLocation:(id)sender {
-    LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-    CLLocation *currentLocation = sharedLocationManager.locationManager.location;
-    self.myCurrentLocationLabel.text = [NSString stringWithFormat:@"Tracked location: %f, %f",
-                                        currentLocation.coordinate.latitude,
-                                        currentLocation.coordinate.longitude];
+- (void)showMap
+{
+    int range = 5;
+    
+    //45.074917,7.680261
+    LocalizationManager *sharedLocalizationManager = [LocalizationManager sharedLocalizationManager];
+    CLLocation *myCurrentLocation = sharedLocalizationManager.locationManager.location;
+    
+    // 1
+    CLLocationCoordinate2D zoomLocation = myCurrentLocation.coordinate;
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, range*METERS_PER_MILE, range*METERS_PER_MILE);
+    
+    // 3
+    [self.mapView setRegion:viewRegion animated:YES];
+    
+    
+    for (id<MKAnnotation> annotation in _mapView.annotations) {
+        [self.mapView removeAnnotation:annotation];
+    }
+    
+    UserService *userService = [UserService sharedUserService];
+    [userService GetByLocation:myCurrentLocation inARangeOf:range
+           success:^(NSArray *users) {
+               for (User *user in users) {
+                   MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                   annotation.coordinate = user.location.coordinate;
+                   [self.mapView addAnnotation:annotation];
+                   NSLog(@"user %@ is at %f, %f",
+                         user.email,
+                         user.location.coordinate.latitude,
+                         user.location.coordinate.longitude);
+               }
+    }
+                       failure:nil];
 }
 @end

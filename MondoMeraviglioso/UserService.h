@@ -36,6 +36,9 @@
 
 - (void) update:(UpdateCommand *)updateCommand;
 
-- (NSArray *) GetByLocation:(CLLocation*) location inARangeOf:(int) kilometers;
+- (void) GetByLocation:(CLLocation*) location
+            inARangeOf:(int) kilometers
+            success:(void (^)(NSArray *users))success
+            failure:(void (^)(NSError *error)) failure;
 
 @end
