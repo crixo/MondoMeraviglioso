@@ -27,6 +27,8 @@
 		4ECC063C18206BF10000CD59 /* LoginCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC063B18206BF10000CD59 /* LoginCommand.m */; };
 		4ECC063F18206C0E0000CD59 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC063E18206C0E0000CD59 /* UserService.m */; };
 		97094F0D1825934000A881BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97094F0C1825934000A881BA /* MainViewController.m */; };
+		972496961843F033008FC6DB /* NearestUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972496951843F033008FC6DB /* NearestUsersViewController.m */; };
+		972496991843F850008FC6DB /* NearestUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 972496981843F850008FC6DB /* NearestUserCell.m */; };
 		9746C3CE1823C016009FDF0B /* GSRadioButtonSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9746C3CD1823C016009FDF0B /* GSRadioButtonSetController.m */; };
 		9746C3D41823C26D009FDF0B /* button-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 9746C3D01823C26D009FDF0B /* button-off.png */; };
 		9746C3D51823C26D009FDF0B /* button-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9746C3D11823C26D009FDF0B /* button-off@2x.png */; };
@@ -94,6 +96,10 @@
 		4ECC063E18206C0E0000CD59 /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserService.m; sourceTree = "<group>"; };
 		97094F0B1825934000A881BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
 		97094F0C1825934000A881BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
+		972496941843F033008FC6DB /* NearestUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearestUsersViewController.h; sourceTree = "<group>"; };
+		972496951843F033008FC6DB /* NearestUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearestUsersViewController.m; sourceTree = "<group>"; };
+		972496971843F850008FC6DB /* NearestUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearestUserCell.h; sourceTree = "<group>"; };
+		972496981843F850008FC6DB /* NearestUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearestUserCell.m; sourceTree = "<group>"; };
 		9746C3CC1823C016009FDF0B /* GSRadioButtonSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSRadioButtonSetController.h; sourceTree = "<group>"; };
 		9746C3CD1823C016009FDF0B /* GSRadioButtonSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSRadioButtonSetController.m; sourceTree = "<group>"; };
 		9746C3D01823C26D009FDF0B /* button-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-off.png"; sourceTree = "<group>"; };
@@ -211,6 +217,10 @@
 				4ECC05FF182044F90000CD59 /* Supporting Files */,
 				9769DE4A18230AF8003A6F50 /* UI */,
 				4ECC062D1820521B0000CD59 /* Users */,
+				972496941843F033008FC6DB /* NearestUsersViewController.h */,
+				972496951843F033008FC6DB /* NearestUsersViewController.m */,
+				972496971843F850008FC6DB /* NearestUserCell.h */,
+				972496981843F850008FC6DB /* NearestUserCell.m */,
 			);
 			path = MondoMeraviglioso;
 			sourceTree = "<group>";
@@ -442,6 +452,7 @@
 				9769DE5318230B25003A6F50 /* MIRadioButtonGroupAppDelegate.m in Sources */,
 				4ECC063F18206C0E0000CD59 /* UserService.m in Sources */,
 				4ECC063C18206BF10000CD59 /* LoginCommand.m in Sources */,
+				972496991843F850008FC6DB /* NearestUserCell.m in Sources */,
 				4ECC0630182053130000CD59 /* User.m in Sources */,
 				97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */,
 				9746C3CE1823C016009FDF0B /* GSRadioButtonSetController.m in Sources */,
@@ -454,6 +465,7 @@
 				979E02D918396BC500B932D9 /* SBJsonStreamParser.m in Sources */,
 				979E02DE18396BC500B932D9 /* SBJsonWriter.m in Sources */,
 				9769DE4918230947003A6F50 /* RegisterViewController.m in Sources */,
+				972496961843F033008FC6DB /* NearestUsersViewController.m in Sources */,
 				9746C3E018242F82009FDF0B /* UserRepository.m in Sources */,
 				9769DE5218230B25003A6F50 /* MIRadioButtonGroup.m in Sources */,
 				979E02DA18396BC500B932D9 /* SBJsonStreamParserState.m in Sources */,

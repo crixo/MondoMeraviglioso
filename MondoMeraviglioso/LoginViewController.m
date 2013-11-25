@@ -34,6 +34,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [self.navigationController setNavigationBarHidden:YES];
+    
     txtEmail.delegate = self;
     txtPassword.delegate = self;
 }
@@ -71,8 +73,9 @@
 {
     [self.spinner stopAnimating];
     NSLog(@"user %@ logged in", user.key);
-    MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    [self presentViewController:mainViewController animated:NO completion:nil];
+    //MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    //[self presentViewController:mainViewController animated:NO completion:nil];
+    [self performSegueWithIdentifier:@"loginMainSegue" sender:self];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{

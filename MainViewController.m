@@ -12,6 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "UserService.h"
 #import "User.h"
+#import "NearestUsersViewController.h"
 
 @interface MainViewController ()
 
@@ -23,6 +24,9 @@
 #define METERS_PER_MILE 1609.344
 
 @implementation MainViewController
+{
+    NSArray *mappedUsers;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,12 +41,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    //self.navigationItem.hidesBackButton = YES;
     [self.mapView setShowsUserLocation:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [self showMap];
 }
 
@@ -50,6 +55,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"NearestUsersSegue"]){
+        NearestUsersViewController *nearestUsersVewController = segue.destinationViewController;
+        nearestUsersVewController.nearestUsers = mappedUsers;
+    }
 }
 
 - (IBAction)refresh:(id)sender {
@@ -84,6 +96,7 @@
     UserService *userService = [UserService sharedUserService];
     [userService GetByLocation:myCurrentLocation inARangeOf:range
            success:^(NSArray *users) {
+               mappedUsers = users;
                for (User *user in users) {
                    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
                    annotation.coordinate = user.location.coordinate;
