@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation User
 
@@ -29,5 +30,17 @@
     return self;
 }
 
+-(CLLocationDistance) getDistanceFrom:(User *)user
+{
+    NSLog(@"self.location: %f, %f",
+          self.location.coordinate.latitude,
+          self.location.coordinate.longitude);
+    
+    NSLog(@"user.location: %f, %f",
+          user.location.coordinate.latitude,
+          user.location.coordinate.longitude);
+    
+    return [self.location distanceFromLocation:user.location];
+}
 
 @end

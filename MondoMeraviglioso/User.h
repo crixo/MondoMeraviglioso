@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CLLocation;
+#import <CoreLocation/CoreLocation.h>
 
 typedef enum UserType{
     Couple
@@ -25,5 +25,6 @@ typedef enum UserType{
 
 - (User*)initWithMandatory:(NSString*)email :(NSString*)screenName :(UserType)type;
 - (User*)initWithLocation:(NSString*)email :(NSString*)screenName :(UserType)type :(CLLocation *) location;
+- (CLLocationDistance) getDistanceFrom:(User *) user;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "LocalizationManager.h"
 #import <CoreLocation/CoreLocation.h>
+#import "UserService.h"
+#import "User.h"
 
 
 @implementation LocalizationManager
@@ -57,6 +59,10 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    UserService *userService = [UserService sharedUserService];
+    User *user = userService.currentUser;
+    user.location = newLocation;
+    
     if (UIApplication.sharedApplication.applicationState == UIApplicationStateActive)
     {
         NSLog(@"New location: %f, %f",
