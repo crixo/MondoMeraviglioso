@@ -53,6 +53,10 @@
 		979E02DD18396BC500B932D9 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D518396BC500B932D9 /* SBJsonStreamWriterState.m */; };
 		979E02DE18396BC500B932D9 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D718396BC500B932D9 /* SBJsonWriter.m */; };
 		97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B6DE941825853D001AC9E3 /* LocalizationManager.m */; };
+		97F75083184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F7507C184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m */; };
+		97F75084184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F7507E184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m */; };
+		97F75085184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F75080184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m */; };
+		97F75086184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F75082184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +146,14 @@
 		979E02D718396BC500B932D9 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		97B6DE931825853D001AC9E3 /* LocalizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationManager.h; sourceTree = "<group>"; };
 		97B6DE941825853D001AC9E3 /* LocalizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationManager.m; sourceTree = "<group>"; };
+		97F7507B184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		97F7507C184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		97F7507D184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		97F7507E184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		97F7507F184A003E00E0CCAA /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		97F75080184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		97F75081184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		97F75082184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +185,7 @@
 		4ECC05EC182044F80000CD59 = {
 			isa = PBXGroup;
 			children = (
-				979E02C818396BC500B932D9 /* SBJson */,
+				97F75087184A007300E0CCAA /* Libraries */,
 				4ECC05FE182044F90000CD59 /* MondoMeraviglioso */,
 				4ECC061D182044F90000CD59 /* MondoMeravigliosoTests */,
 				4ECC05F7182044F90000CD59 /* Frameworks */,
@@ -212,7 +224,6 @@
 				4ECC0610182044F90000CD59 /* Images.xcassets */,
 				97B6DE921825851C001AC9E3 /* Localizations */,
 				4ECC05FF182044F90000CD59 /* Supporting Files */,
-				9769DE4A18230AF8003A6F50 /* UI */,
 				4ECC062D1820521B0000CD59 /* Users */,
 			);
 			path = MondoMeraviglioso;
@@ -333,15 +344,7 @@
 				9746C3CC1823C016009FDF0B /* GSRadioButtonSetController.h */,
 			);
 			name = GSRadioButtonSetController;
-			sourceTree = "<group>";
-		};
-		9769DE4A18230AF8003A6F50 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				9746C3CF1823C030009FDF0B /* GSRadioButtonSetController */,
-				9769DE4B18230B05003A6F50 /* RadioButtons */,
-			);
-			name = UI;
+			path = MondoMeraviglioso;
 			sourceTree = "<group>";
 		};
 		9769DE4B18230B05003A6F50 /* RadioButtons */ = {
@@ -355,6 +358,7 @@
 				9769DE5118230B25003A6F50 /* radio-on.png */,
 			);
 			name = RadioButtons;
+			path = MondoMeraviglioso;
 			sourceTree = "<group>";
 		};
 		979E02C818396BC500B932D9 /* SBJson */ = {
@@ -386,6 +390,32 @@
 				97B6DE941825853D001AC9E3 /* LocalizationManager.m */,
 			);
 			name = Localizations;
+			sourceTree = "<group>";
+		};
+		97F7507A184A003E00E0CCAA /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				97F7507B184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.h */,
+				97F7507C184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m */,
+				97F7507D184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.h */,
+				97F7507E184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m */,
+				97F7507F184A003E00E0CCAA /* TPKeyboardAvoidingTableView.h */,
+				97F75080184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m */,
+				97F75081184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				97F75082184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		97F75087184A007300E0CCAA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9769DE4B18230B05003A6F50 /* RadioButtons */,
+				9746C3CF1823C030009FDF0B /* GSRadioButtonSetController */,
+				979E02C818396BC500B932D9 /* SBJson */,
+				97F7507A184A003E00E0CCAA /* TPKeyboardAvoiding */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,8 +530,10 @@
 				972496991843F850008FC6DB /* NearestUserCell.m in Sources */,
 				4ECC0630182053130000CD59 /* User.m in Sources */,
 				97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */,
+				97F75083184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				9746C3CE1823C016009FDF0B /* GSRadioButtonSetController.m in Sources */,
 				979E02DB18396BC500B932D9 /* SBJsonStreamTokeniser.m in Sources */,
+				97F75084184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9746C3DA18242181009FDF0B /* RegisterCommand.m in Sources */,
 				97094F0D1825934000A881BA /* MainViewController.m in Sources */,
 				979E02DC18396BC500B932D9 /* SBJsonStreamWriter.m in Sources */,
@@ -513,11 +545,13 @@
 				4ED3C11C18490E28004BC61E /* UserDetailViewController.m in Sources */,
 				972496961843F033008FC6DB /* NearestUsersViewController.m in Sources */,
 				9746C3E018242F82009FDF0B /* UserRepository.m in Sources */,
+				97F75085184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m in Sources */,
 				9769DE5218230B25003A6F50 /* MIRadioButtonGroup.m in Sources */,
 				979E02DA18396BC500B932D9 /* SBJsonStreamParserState.m in Sources */,
 				4ECC060F182044F90000CD59 /* LoginViewController.m in Sources */,
 				9746C3DD1824219A009FDF0B /* UpdateCommand.m in Sources */,
 				4ECC0609182044F90000CD59 /* AppDelegate.m in Sources */,
+				97F75086184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				979E02D818396BC500B932D9 /* SBJsonParser.m in Sources */,
 				4ECC0639182062670000CD59 /* CreateCommand.m in Sources */,
 				4ECC0605182044F90000CD59 /* main.m in Sources */,

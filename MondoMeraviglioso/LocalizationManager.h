@@ -15,11 +15,10 @@
 
 @end
 
-@interface LocalizationManager : NSObject <CLLocationManagerDelegate>
+@interface LocalizationManager : NSObject
 
 + (id)sharedLocalizationManager;
 
-@property (weak, nonatomic) id<LocalizationManagerDelegate> delegate;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 

@@ -33,7 +33,6 @@
     if (self = [super init])
     {
         _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
         // We don't want to be notified of small changes in location,
         // preferring to use our last cached results, if any.
@@ -55,40 +54,7 @@
     [_locationManager startUpdatingLocation];
 }
 
-- (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
-{
-    UserService *userService = [UserService sharedUserService];
-    User *user = userService.currentUser;
-    user.location = newLocation;
-    
-    if (UIApplication.sharedApplication.applicationState == UIApplicationStateActive)
-    {
-        NSLog(@"New location: %f, %f",
-              newLocation.coordinate.latitude,
-              newLocation.coordinate.longitude);
-        
-        if (!oldLocation ||
-            (oldLocation.coordinate.latitude != newLocation.coordinate.latitude &&
-             oldLocation.coordinate.longitude != newLocation.coordinate.longitude))
-        {
-            [self.delegate locationChanged:newLocation];
-        }
-        
-    }
-    else
-    {
-        NSLog(@"App is backgrounded. New location is %@", newLocation);
-    }
-    
-    if(oldLocation)
-    {
-        NSLog(@"Old location: %f, %f",
-          oldLocation.coordinate.latitude,
-          oldLocation.coordinate.longitude);
-    }
-}
+
 
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error {

@@ -11,7 +11,7 @@
 @class LoginCommand;
 @class RegisterCommand;
 @class UpdateCommand;
-@class CLLocation;
+#import <CoreLocation/CoreLocation.h>
 
 
 @protocol UserServiceDelegate
@@ -22,7 +22,7 @@
 - (void)commandFailed:(id)command withError:(NSError *)error;
 @end
 
-@interface UserService : NSObject
+@interface UserService : NSObject <CLLocationManagerDelegate>
 
 + (id)sharedUserService;
 

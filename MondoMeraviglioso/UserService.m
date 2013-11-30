@@ -30,9 +30,12 @@
 #define sec(x)		(1.0/cos(x))			/* secant */
 #define csc(x)		(1.0/sin(x))			/* cosecant */
 
+
 @implementation UserService
 {
     NSMutableArray *users;
+    LocalizationManager *sharedLocationManager;
+    
 }
 
 #pragma mark Singleton Methods
@@ -50,6 +53,8 @@
 {
     if (self = [super init])
     {
+        sharedLocationManager = [LocalizationManager sharedLocalizationManager];
+        sharedLocationManager.locationManager.delegate = self;
         users= [NSMutableArray arrayWithObjects:
                 [[User alloc]initWithMandatory:@"test1@wp.it" :@"test1" :Couple],
                 [[User alloc]initWithMandatory:@"test2@wp.it" :@"test2" :Couple], nil];
@@ -61,13 +66,11 @@
     // Should never be called, but just here for clarity really.
 }
 
-- (void) setCurrentUser:(id)user
-{
-    _currentUser = user;
-    
-    LocalizationManager *sharedLocationManager = [LocalizationManager sharedLocalizationManager];
-    [sharedLocationManager.locationManager startUpdatingLocation];
-}
+//- (void) setCurrentUser:(id)user
+//{
+//    _currentUser = user;
+//    [sharedLocationManager.locationManager startUpdatingLocation];
+//}
 
 
 - (void) login:(LoginCommand *)loginCommand
@@ -75,7 +78,8 @@
     User *user = [self findByCredentials:loginCommand.email :loginCommand.password];
     if(user)
     {
-        self.currentUser = user;
+        _currentUser = user;
+        [sharedLocationManager.locationManager startUpdatingLocation];
         [self.delegate loginSucceded:user];
     }
     else
@@ -123,6 +127,44 @@
         }
     }
     return nil;
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    if (!self.currentUser.location || [self isPositionChanged:newLocation :oldLocation])
+    {
+        self.currentUser.location = newLocation;
+        [self sendLocationToServer];
+    }
+    
+    if (UIApplication.sharedApplication.applicationState == UIApplicationStateActive)
+    {
+        NSLog(@"New location: %f, %f",
+              newLocation.coordinate.latitude,
+              newLocation.coordinate.longitude);
+    }
+    else
+    {
+        NSLog(@"App is backgrounded. New location is %@", newLocation);
+    }
+}
+
+-(BOOL) isPositionChanged:(CLLocation *)newLocation :(CLLocation *)oldLocation
+{
+    return !oldLocation ||
+    (oldLocation.coordinate.latitude != newLocation.coordinate.latitude &&
+     oldLocation.coordinate.longitude != newLocation.coordinate.longitude);
+}
+
+-(void) sendLocationToServer
+{
+    NSLog(@"Sending user %@ location to server: %f, %f",
+          self.currentUser.key,
+          self.currentUser.location.coordinate.latitude,
+          self.currentUser.location.coordinate.longitude);
+    
 }
 
 -(CLLocation*) moveLocation:(CLLocation*)startLocation:(double)movementInMeters:(double)movementBearing

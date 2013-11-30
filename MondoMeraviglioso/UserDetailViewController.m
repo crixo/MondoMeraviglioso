@@ -7,6 +7,7 @@
 //
 
 #import "UserDetailViewController.h"
+#import "User.h"
 
 @interface UserDetailViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *userTypeLabel;
@@ -33,6 +34,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    self.title = self.user.screenName;
+    self.userEmailLabel.text = self.user.email;
+    self.userTypeLabel.text = [User getTypeAsString:(int)self.user.type];
+    
+    //self.userDescriptionTextView.hidden = (self.user.description.length == 0);
+    self.userDescriptionTextView.text = (self.user.description.length == 0)
+        ? NSLocalizedString(@"NoDescription", @"No description available")
+        : self.user.description;
+    
+    //To make the border look very close to a UITextField
+    [self.messageToSendTextView.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.messageToSendTextView.layer setBorderWidth:2.0];
 }
 
 - (void)didReceiveMemoryWarning

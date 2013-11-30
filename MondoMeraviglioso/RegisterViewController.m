@@ -62,15 +62,9 @@
     NSLog(@"selected user type: %lu", (unsigned long)selectedIndex);
 }
 
-- (IBAction)register:(id)sender {
-    UserType userType;
-    
-    if(selectedUserTypeIndex = 0)
-    {
-        userType = Couple;
-    }
-    
-    NSLog(@"selected user type %d", userType);
+- (IBAction)register:(id)sender
+{
+    NSLog(@"selected user type %@", [User getTypeAsString:(int)selectedUserTypeIndex]);
 }
 
 

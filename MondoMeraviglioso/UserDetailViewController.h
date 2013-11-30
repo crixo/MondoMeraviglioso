@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class User;
 
 @interface UserDetailViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *user;
+@property (nonatomic, strong) User *user;
 
 @end
