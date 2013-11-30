@@ -12,6 +12,7 @@
 #import "UserRepository.h"
 #import "RegisterCommand.h"
 #import "LocalizationManager.h"
+#import "SBJsonWriter.h";
 
 #include <math.h>
 #define KmPerDegree		111.12000071117
@@ -35,7 +36,8 @@
 {
     NSMutableArray *users;
     LocalizationManager *sharedLocationManager;
-    
+    NSString *restBaseUrl;
+    NSString *apiKey;
 }
 
 #pragma mark Singleton Methods
@@ -55,6 +57,7 @@
     {
         sharedLocationManager = [LocalizationManager sharedLocalizationManager];
         sharedLocationManager.locationManager.delegate = self;
+        restBaseUrl = @"http://mm";
         users= [NSMutableArray arrayWithObjects:
                 [[User alloc]initWithMandatory:@"test1@wp.it" :@"test1" :Couple],
                 [[User alloc]initWithMandatory:@"test2@wp.it" :@"test2" :Couple], nil];
@@ -160,10 +163,50 @@
 
 -(void) sendLocationToServer
 {
-    NSLog(@"Sending user %@ location to server: %f, %f",
+
+    
+    NSDate *currentDate = [[NSDate alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    NSString *localDateString = [dateFormatter stringFromDate:currentDate];
+    
+    NSLog(@"Sending user %@ ts=%@ location to server: %f, %f",
           self.currentUser.key,
+          localDateString,
           self.currentUser.location.coordinate.latitude,
           self.currentUser.location.coordinate.longitude);
+    
+    NSMutableDictionary *jsonData= [[NSMutableDictionary alloc] init];
+    [jsonData setObject:self.currentUser.key forKey:@"userKey"];
+    [jsonData setObject:localDateString forKey:@"ts"];
+    [jsonData setObject:[NSString stringWithFormat:@"%f", self.currentUser.location.coordinate.latitude] forKey:@"latitude"];
+    [jsonData setObject:[NSString stringWithFormat:@"%f", self.currentUser.location.coordinate.longitude] forKey:@"longitude"];
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/update-user-location.php", restBaseUrl];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSLog(@"%@", urlString);
+    
+    SBJsonWriter *jsonWriter = [[SBJsonWriter alloc] init];
+    NSString *jsonPostBody = [jsonWriter stringWithObject:jsonData];
+    
+    NSLog(@"jsonPostBody: %@", jsonPostBody);
+    NSData *requestData = [NSData dataWithBytes:[jsonPostBody UTF8String] length:[jsonPostBody length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:apiKey forHTTPHeaderField:@"X-Api-Authorization"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody: requestData];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error: %@", error);
+        }
+    }];
     
 }
 
