@@ -57,7 +57,7 @@
     {
         sharedLocationManager = [LocalizationManager sharedLocalizationManager];
         sharedLocationManager.locationManager.delegate = self;
-        restBaseUrl = @"http://mm";
+        restBaseUrl = @"http://www.webprofessor.it/mm";
         users= [NSMutableArray arrayWithObjects:
                 [[User alloc]initWithMandatory:@"test1@wp.it" :@"test1" :Couple],
                 [[User alloc]initWithMandatory:@"test2@wp.it" :@"test2" :Couple], nil];
@@ -183,7 +183,7 @@
     [jsonData setObject:[NSString stringWithFormat:@"%f", self.currentUser.location.coordinate.latitude] forKey:@"latitude"];
     [jsonData setObject:[NSString stringWithFormat:@"%f", self.currentUser.location.coordinate.longitude] forKey:@"longitude"];
     
-    NSString *urlString = [NSString stringWithFormat:@"%@/update-user-location.php", restBaseUrl];
+    NSString *urlString = [NSString stringWithFormat:@"%@/update-user-location4.php", restBaseUrl];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSLog(@"%@", urlString);
     
