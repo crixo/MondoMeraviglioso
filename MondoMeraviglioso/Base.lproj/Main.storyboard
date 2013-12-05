@@ -84,6 +84,21 @@
             </objects>
             <point key="canvasLocation" x="790" y="487"/>
         </scene>
+        <!--User Message List View Controller - Message List-->
+        <scene sceneID="YJj-92-uIV">
+            <objects>
+                <viewController id="pxk-HU-A0U" customClass="UserMessageListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KvT-4s-ntu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Message List" id="ZgC-tF-kHU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmT-qU-Txm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1377" y="-151"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="7Qn-h0-yfS">
             <objects>
@@ -110,11 +125,15 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bnI-9N-ETh">
-                                                    <rect key="frame" x="99" y="3" width="46" height="30"/>
+                                                    <rect key="frame" x="64" y="2" width="81" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal" title="Messages">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="showMessageList:" destination="bJP-rr-qbx" eventType="touchUpInside" id="7BN-Hs-WZm"/>
+                                                        <segue destination="pxk-HU-A0U" kind="push" identifier="UserMessageListSegue" id="gty-Ss-DdC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -148,11 +167,12 @@
                     <navigationItem key="navigationItem" id="jvw-mQ-rtk"/>
                     <connections>
                         <outlet property="mapView" destination="AT8-aY-jLA" id="0iC-rt-D2T"/>
+                        <outlet property="messagesButton" destination="bnI-9N-ETh" id="oq0-u3-GG9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uca-JH-ida" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339" y="487"/>
+            <point key="canvasLocation" x="1349" y="501"/>
         </scene>
         <!--Nearest Users View Controller-->
         <scene sceneID="q9w-0Y-muu">

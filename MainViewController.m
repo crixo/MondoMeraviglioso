@@ -13,9 +13,12 @@
 #import "UserService.h"
 #import "User.h"
 #import "NearestUsersViewController.h"
+#import "UserMessageListViewController.h"
 
 @interface MainViewController ()
+- (IBAction)showMessageList:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *messagesButton;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)refresh:(id)sender;
 
@@ -61,6 +64,8 @@
     if([segue.identifier isEqualToString:@"NearestUsersSegue"]){
         NearestUsersViewController *nearestUsersVewController = segue.destinationViewController;
         nearestUsersVewController.nearestUsers = mappedUsers;
+    }else if([segue.identifier isEqualToString:@"UserMessageListSegue"]){
+            UserMessageListViewController *userMessageListViewController = segue.destinationViewController;
     }
 }
 
@@ -109,4 +114,7 @@
     }
                        failure:nil];
 }
+- (IBAction)showMessageList:(id)sender {
+}
+
 @end
