@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LocalizationManager.h"
+#import "LoginViewController.h"
 
 
 @implementation AppDelegate
@@ -17,6 +18,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // Pass the managed object context to the root view controller (the login view)
+    //LoginViewController *rootView = (LoginViewController *)self.window.rootViewController;
+    
     return YES;
 }
 							

@@ -34,7 +34,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self.navigationController setNavigationBarHidden:YES];
+    //[self.navigationController setNavigationBarHidden:YES];
     
     txtEmail.delegate = self;
     txtPassword.delegate = self;
@@ -81,5 +81,14 @@
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];//keyboard disappears
     return YES;
+}
+
+//  When we have logged in successfully, we need to pass the managed object context to our table view (via the navigation controller)
+//  so we get a reference to the navigation controller first, then get the last controller in the nav stack, and pass the MOC to it
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
+//    PictureListMainTable *piclist = (PictureListMainTable *)[[navController viewControllers] lastObject];
+//    piclist.managedObjectContext = managedObjectContext;
 }
 @end

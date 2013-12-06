@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class User;
 
 @interface UserMessageListViewController : UIViewController
-
+    @property (nonatomic, strong) User *user;
 @end

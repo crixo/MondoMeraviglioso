@@ -16,9 +16,8 @@
 #import "UserMessageListViewController.h"
 
 @interface MainViewController ()
-- (IBAction)showMessageList:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *userMessageListButton;
 
-@property (strong, nonatomic) IBOutlet UIButton *messagesButton;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)refresh:(id)sender;
 
@@ -50,7 +49,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    //[self.navigationController setNavigationBarHidden:YES animated:animated];
     [self showMap];
 }
 
@@ -114,7 +113,6 @@
     }
                        failure:nil];
 }
-- (IBAction)showMessageList:(id)sender {
-}
+
 
 @end

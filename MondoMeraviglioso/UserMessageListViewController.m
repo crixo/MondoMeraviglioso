@@ -28,6 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Message List";
+    //[self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning

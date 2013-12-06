@@ -34,7 +34,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Nearest users";
-    [self.navigationController setNavigationBarHidden:NO];
+    //[self.navigationController setNavigationBarHidden:NO];
     self.nearestUsersTableView.delegate = self;
 }
 
