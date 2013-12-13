@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1@wp.it" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" id="ihr-yI-py8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test.mm.01@gmail.com" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" id="ihr-yI-py8">
                                 <rect key="frame" x="80" y="203" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -35,7 +35,7 @@
                                     <action selector="performLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zce-KV-3ZS"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" id="1hC-Op-6Bg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" id="1hC-Op-6Bg">
                                 <rect key="frame" x="80" y="278" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,11 +69,19 @@
                                     <action selector="openRegistration:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LpX-fk-jEn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login failed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ru8-Lr-A4w">
+                                <rect key="frame" x="93" y="320" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.50383417751673387" green="0.60130442227453929" blue="0.96939998865127563" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="7GL-sg-HIJ"/>
                     <connections>
+                        <outlet property="loginFailedLabel" destination="Ru8-Lr-A4w" id="iAz-Rn-ehc"/>
                         <outlet property="spinner" destination="pdg-k0-TlY" id="BKl-r7-ekK"/>
                         <outlet property="txtEmail" destination="ihr-yI-py8" id="dK8-DL-ROi"/>
                         <outlet property="txtPassword" destination="1hC-Op-6Bg" id="fP5-ep-8wE"/>
@@ -102,7 +110,6 @@
         <!--Main View Controller-->
         <scene sceneID="7Qn-h0-yfS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uca-JH-ida" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MainViewController" id="bJP-rr-qbx" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzf-XD-aAE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -146,6 +153,7 @@
                         <outlet property="userMessageListButton" destination="xhF-5e-Ihh" id="m9I-SC-G96"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uca-JH-ida" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1947" y="497"/>
         </scene>

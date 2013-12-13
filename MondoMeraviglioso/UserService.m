@@ -14,11 +14,14 @@
 #import "LocalizationManager.h"
 #import "SBJsonWriter.h"
 #import "LocalizationHelper.h"
+#import "JsonClient.h"
 
 @implementation UserService
 {
     NSMutableArray *users;
     LocalizationManager *sharedLocationManager;
+    JsonClient *sharedJsonClient;
+    
     NSString *restBaseUrl;
     NSString *apiKey;
 }
@@ -40,6 +43,9 @@
     {
         sharedLocationManager = [LocalizationManager sharedLocalizationManager];
         sharedLocationManager.locationManager.delegate = self;
+        
+        sharedJsonClient = [JsonClient sharedJsonClient];
+        
 #if TARGET_IPHONE_SIMULATOR
         restBaseUrl = @"http://mm";
 #else
@@ -59,18 +65,22 @@
 
 - (void) login:(LoginCommand *)loginCommand
 {
-    User *user = [self findByCredentials:loginCommand.email :loginCommand.password];
-    if(user)
-    {
-        _currentUser = user;
-        [sharedLocationManager.locationManager startUpdatingLocation];
-        [self.delegate loginSucceded:user];
-    }
-    else
-    {
-        NSError *error =  [NSError errorWithDomain:@"myDomain" code:100 userInfo:nil];
-        [self.delegate commandFailed:loginCommand withError:error];
-    }
+    NSMutableDictionary *jsonData= [[NSMutableDictionary alloc] init];
+    [jsonData setObject:loginCommand.email forKey:@"email"];
+    [jsonData setObject:loginCommand.password forKey:@"pwd"];
+    
+    [sharedJsonClient post:jsonData to:@"user-login.php"
+        success:^(NSDictionary *userData)
+        {
+            User* user = [[User alloc]initWithDictionary:userData];
+            _currentUser = user;
+            [sharedLocationManager.locationManager startUpdatingLocation];
+            [self.delegate loginSucceded:user];
+        }
+        failure:^(NSError *error)
+        {
+            [self.delegate commandFailed:loginCommand withError:error];
+        }];
 }
 
 - (void) register:(RegisterCommand *)registerCommand

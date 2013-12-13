@@ -33,6 +33,19 @@
     return self;
 }
 
+- (User*)initWithDictionary:(NSDictionary*)dic
+{
+    self = [super init];
+    self.key = [dic objectForKey:@"key"];
+    self.email = [dic objectForKey:@"email"];
+    self.screenName = [dic objectForKey:@"screenName"];
+    
+    NSNumber *num = [dic objectForKey:@"type"];
+    self.type = [num intValue];
+    
+    return self;
+}
+
 -(CLLocationDistance) getDistanceFrom:(User *)user
 {
     NSLog(@"self.location: %f, %f",

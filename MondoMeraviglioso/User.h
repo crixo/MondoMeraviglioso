@@ -26,6 +26,7 @@ typedef enum UserType{
 + (NSString*) getTypeAsString:(int)type;
 
 - (User*)initWithMandatory:(NSString*)email :(NSString*)screenName :(int)type;
+- (User*)initWithDictionary:(NSDictionary*)dic;
 - (User*)initWithLocation:(NSString*)email :(NSString*)screenName :(int)type :(CLLocation *) location;
 - (CLLocationDistance) getDistanceFrom:(User *) user;
 

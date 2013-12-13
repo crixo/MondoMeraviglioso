@@ -40,6 +40,7 @@
 		9746C3E018242F82009FDF0B /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9746C3DF18242F82009FDF0B /* UserRepository.m */; };
 		9746C3E2182431EF009FDF0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9746C3E1182431EF009FDF0B /* CoreLocation.framework */; };
 		974A4FD518512E6A009C9422 /* UserMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974A4FD418512E6A009C9422 /* UserMessageListViewController.m */; };
+		974C6E7B185A5A19006616BA /* JsonClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C6E7A185A5A19006616BA /* JsonClient.m */; };
 		9762B5A2185126AB008884CB /* LocalizationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9762B5A1185126AA008884CB /* LocalizationHelper.m */; };
 		9769DE4918230947003A6F50 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9769DE4818230947003A6F50 /* RegisterViewController.m */; };
 		9769DE5218230B25003A6F50 /* MIRadioButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 9769DE4D18230B25003A6F50 /* MIRadioButtonGroup.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -124,6 +125,8 @@
 		9746C3E1182431EF009FDF0B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		974A4FD318512E6A009C9422 /* UserMessageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessageListViewController.h; sourceTree = "<group>"; };
 		974A4FD418512E6A009C9422 /* UserMessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessageListViewController.m; sourceTree = "<group>"; };
+		974C6E79185A5A19006616BA /* JsonClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonClient.h; sourceTree = "<group>"; };
+		974C6E7A185A5A19006616BA /* JsonClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonClient.m; sourceTree = "<group>"; };
 		9762B5A0185126AA008884CB /* LocalizationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationHelper.h; sourceTree = "<group>"; };
 		9762B5A1185126AA008884CB /* LocalizationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationHelper.m; sourceTree = "<group>"; };
 		9769DE4718230947003A6F50 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 		4ECC05FE182044F90000CD59 /* MondoMeraviglioso */ = {
 			isa = PBXGroup;
 			children = (
+				974C6E78185A59C0006616BA /* Infrastructure */,
 				4ED3C11D184913D9004BC61E /* Presentation */,
 				4ECC0607182044F90000CD59 /* AppDelegate.h */,
 				4ECC0608182044F90000CD59 /* AppDelegate.m */,
@@ -361,6 +365,15 @@
 				974A4FD418512E6A009C9422 /* UserMessageListViewController.m */,
 			);
 			name = UserMessageList;
+			sourceTree = "<group>";
+		};
+		974C6E78185A59C0006616BA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				974C6E79185A5A19006616BA /* JsonClient.h */,
+				974C6E7A185A5A19006616BA /* JsonClient.m */,
+			);
+			name = Infrastructure;
 			sourceTree = "<group>";
 		};
 		9769DE4B18230B05003A6F50 /* RadioButtons */ = {
@@ -574,6 +587,7 @@
 				97F75086184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				979E02D818396BC500B932D9 /* SBJsonParser.m in Sources */,
 				4ECC0639182062670000CD59 /* CreateCommand.m in Sources */,
+				974C6E7B185A5A19006616BA /* JsonClient.m in Sources */,
 				4ECC0605182044F90000CD59 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

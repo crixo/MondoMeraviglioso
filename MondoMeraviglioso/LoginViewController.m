@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 - (IBAction)performLogin:(id)sender;
 - (IBAction)openRegistration:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *loginFailedLabel;
 
 @end
 
@@ -38,6 +39,7 @@
     
     txtEmail.delegate = self;
     txtPassword.delegate = self;
+    self.loginFailedLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +49,7 @@
 }
 
 - (IBAction)performLogin:(id)sender {
+    self.loginFailedLabel.hidden = YES;
     [self.spinner startAnimating];
     
     LoginCommand *loginCommand = [[LoginCommand alloc]init];
@@ -66,6 +69,8 @@
 - (void) commandFailed:(id)command withError:(NSError *)error
 {
     [self.spinner stopAnimating];
+    
+    self.loginFailedLabel.hidden = NO;
     NSLog(@"%@",[error localizedDescription]);
 }
 
