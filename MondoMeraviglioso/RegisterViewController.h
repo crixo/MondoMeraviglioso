@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "GSRadioButtonSetController.h"
 
-@interface RegisterViewController : UIViewController<GSRadioButtonSetControllerDelegate>
+@interface RegisterViewController : UIViewController<GSRadioButtonSetControllerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end

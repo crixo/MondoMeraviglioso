@@ -9,10 +9,14 @@
 #import "RegisterViewController.h"
 #import "User.h"
 #import "LoginViewController.h"
+#import "Base64.h"
+#import "ImageHelper.h"
 
 @interface RegisterViewController ()
 
 @property (strong, nonatomic) IBOutlet GSRadioButtonSetController *userTypeRadioButtonSet;
+@property (strong, nonatomic) IBOutlet UIImageView *thumbnailImageView;
+- (IBAction)chooseThumbnail:(id)sender;
 
 - (IBAction)register:(id)sender;
 - (IBAction)goBackToLogin:(id)sender;
@@ -68,7 +72,64 @@
 }
 
 
-- (IBAction)goBackToLogin:(id)sender {
+- (IBAction)goBackToLogin:(id)sender
+{
         LoginViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        [self presentViewController:loginViewController animated:NO completion:nil];}
+        [self presentViewController:loginViewController animated:NO completion:nil];
+}
+
+- (IBAction)chooseThumbnail:(id)sender
+{
+    //[self performSegueWithIdentifier:@"ImagePickerSegue" sender:self];
+    UIImagePickerController *imagePickController=[[UIImagePickerController alloc]init];
+    imagePickController.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePickController.delegate=self;
+    imagePickController.allowsEditing=TRUE;
+    [self presentViewController:imagePickController animated:YES completion:nil];
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UIImagePickerController *imagePickController = [segue destinationViewController];
+    imagePickController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePickController.delegate=self;
+    imagePickController.allowsEditing=TRUE;
+}
+
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    int imageSize = imageData.length/1024;
+    
+    NSLog(@"selected image size: %d kb", imageSize);
+    
+    if(imageSize > 300)
+    {
+        image = [ImageHelper imageWithImage:image scaledToSize:CGSizeMake(20, 20)];
+        imageData = UIImagePNGRepresentation(image);
+        imageSize = imageData.length/1024;
+        
+        NSLog(@"selected image size now is: %d kb", imageSize);
+    }
+    
+    self.thumbnailImageView.image = image;
+    
+    NSString * actualString = [Base64 encode:imageData];
+    NSLog(@"%@",actualString);
+    
+//    [[self.view viewWithTag:100023] removeFromSuperview];
+//    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(320/2-200/2, 10, 100, 100)];
+//    imageView.tag = 100023;
+//    imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    imageView.image = image;
+//    [self.view addSubview:imageView];
+}
+
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

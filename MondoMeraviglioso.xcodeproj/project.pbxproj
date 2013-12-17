@@ -55,6 +55,8 @@
 		979E02DC18396BC500B932D9 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D318396BC500B932D9 /* SBJsonStreamWriter.m */; };
 		979E02DD18396BC500B932D9 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D518396BC500B932D9 /* SBJsonStreamWriterState.m */; };
 		979E02DE18396BC500B932D9 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E02D718396BC500B932D9 /* SBJsonWriter.m */; };
+		97A031F418610C3D00AEDE8D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A031F318610C3D00AEDE8D /* Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		97A031F71861139900AEDE8D /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A031F61861139800AEDE8D /* ImageHelper.m */; };
 		97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B6DE941825853D001AC9E3 /* LocalizationManager.m */; };
 		97F75083184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F7507C184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m */; };
 		97F75084184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F7507E184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m */; };
@@ -153,6 +155,10 @@
 		979E02D518396BC500B932D9 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
 		979E02D618396BC500B932D9 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		979E02D718396BC500B932D9 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		97A031F218610C3D00AEDE8D /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		97A031F318610C3D00AEDE8D /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		97A031F51861139800AEDE8D /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
+		97A031F61861139800AEDE8D /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
 		97B6DE931825853D001AC9E3 /* LocalizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationManager.h; sourceTree = "<group>"; };
 		97B6DE941825853D001AC9E3 /* LocalizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationManager.m; sourceTree = "<group>"; };
 		97F7507B184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -372,6 +378,8 @@
 			children = (
 				974C6E79185A5A19006616BA /* JsonClient.h */,
 				974C6E7A185A5A19006616BA /* JsonClient.m */,
+				97A031F51861139800AEDE8D /* ImageHelper.h */,
+				97A031F61861139800AEDE8D /* ImageHelper.m */,
 			);
 			name = Infrastructure;
 			sourceTree = "<group>";
@@ -412,6 +420,15 @@
 			path = SBJson;
 			sourceTree = "<group>";
 		};
+		97A031F118610C3D00AEDE8D /* base64 */ = {
+			isa = PBXGroup;
+			children = (
+				97A031F218610C3D00AEDE8D /* Base64.h */,
+				97A031F318610C3D00AEDE8D /* Base64.m */,
+			);
+			path = base64;
+			sourceTree = "<group>";
+		};
 		97B6DE921825851C001AC9E3 /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +458,7 @@
 		97F75087184A007300E0CCAA /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				97A031F118610C3D00AEDE8D /* base64 */,
 				9769DE4B18230B05003A6F50 /* RadioButtons */,
 				9746C3CF1823C030009FDF0B /* GSRadioButtonSetController */,
 				979E02C818396BC500B932D9 /* SBJson */,
@@ -570,12 +588,14 @@
 				979E02DC18396BC500B932D9 /* SBJsonStreamWriter.m in Sources */,
 				4ECC0633182057B90000CD59 /* Location.m in Sources */,
 				979E02DD18396BC500B932D9 /* SBJsonStreamWriterState.m in Sources */,
+				97A031F71861139900AEDE8D /* ImageHelper.m in Sources */,
 				979E02D918396BC500B932D9 /* SBJsonStreamParser.m in Sources */,
 				979E02DE18396BC500B932D9 /* SBJsonWriter.m in Sources */,
 				9769DE4918230947003A6F50 /* RegisterViewController.m in Sources */,
 				4ED3C11C18490E28004BC61E /* UserDetailViewController.m in Sources */,
 				972496961843F033008FC6DB /* NearestUsersViewController.m in Sources */,
 				9746C3E018242F82009FDF0B /* UserRepository.m in Sources */,
+				97A031F418610C3D00AEDE8D /* Base64.m in Sources */,
 				974A4FD518512E6A009C9422 /* UserMessageListViewController.m in Sources */,
 				97F75085184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m in Sources */,
 				9769DE5218230B25003A6F50 /* MIRadioButtonGroup.m in Sources */,
