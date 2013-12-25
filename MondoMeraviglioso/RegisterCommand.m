@@ -7,7 +7,16 @@
 //
 
 #import "RegisterCommand.h"
+#import "User.h"
 
 @implementation RegisterCommand
+
+- (RegisterCommand*)initWithKey
+{
+    self = [super init];
+    
+    self.userKey = [User getUUID];
+    return self;
+}
 
 @end

@@ -24,6 +24,7 @@ typedef enum UserType{
 @property (nonatomic, strong) CLLocation *location;
 
 + (NSString*) getTypeAsString:(int)type;
++(NSString *)getUUID;
 
 - (User*)initWithMandatory:(NSString*)email :(NSString*)screenName :(int)type;
 - (User*)initWithDictionary:(NSDictionary*)dic;

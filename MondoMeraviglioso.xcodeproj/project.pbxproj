@@ -23,7 +23,6 @@
 		4ECC0624182044F90000CD59 /* MondoMeravigliosoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC0623182044F90000CD59 /* MondoMeravigliosoTests.m */; };
 		4ECC0630182053130000CD59 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC062F182053130000CD59 /* User.m */; };
 		4ECC0633182057B90000CD59 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC0632182057B90000CD59 /* Location.m */; };
-		4ECC0639182062670000CD59 /* CreateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC0638182062670000CD59 /* CreateCommand.m */; };
 		4ECC063C18206BF10000CD59 /* LoginCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC063B18206BF10000CD59 /* LoginCommand.m */; };
 		4ECC063F18206C0E0000CD59 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC063E18206C0E0000CD59 /* UserService.m */; };
 		4ED3C11C18490E28004BC61E /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3C11B18490E28004BC61E /* UserDetailViewController.m */; };
@@ -98,8 +97,6 @@
 		4ECC062F182053130000CD59 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4ECC0631182057B90000CD59 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		4ECC0632182057B90000CD59 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		4ECC0637182062670000CD59 /* CreateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCommand.h; sourceTree = "<group>"; };
-		4ECC0638182062670000CD59 /* CreateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCommand.m; sourceTree = "<group>"; };
 		4ECC063A18206BF10000CD59 /* LoginCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCommand.h; sourceTree = "<group>"; };
 		4ECC063B18206BF10000CD59 /* LoginCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCommand.m; sourceTree = "<group>"; };
 		4ECC063D18206C0E0000CD59 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
@@ -281,8 +278,6 @@
 				4ECC062F182053130000CD59 /* User.m */,
 				4ECC0631182057B90000CD59 /* Location.h */,
 				4ECC0632182057B90000CD59 /* Location.m */,
-				4ECC0637182062670000CD59 /* CreateCommand.h */,
-				4ECC0638182062670000CD59 /* CreateCommand.m */,
 				4ECC063A18206BF10000CD59 /* LoginCommand.h */,
 				4ECC063B18206BF10000CD59 /* LoginCommand.m */,
 				4ECC063D18206C0E0000CD59 /* UserService.h */,
@@ -606,7 +601,6 @@
 				4ECC0609182044F90000CD59 /* AppDelegate.m in Sources */,
 				97F75086184A003E00E0CCAA /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				979E02D818396BC500B932D9 /* SBJsonParser.m in Sources */,
-				4ECC0639182062670000CD59 /* CreateCommand.m in Sources */,
 				974C6E7B185A5A19006616BA /* JsonClient.m in Sources */,
 				4ECC0605182044F90000CD59 /* main.m in Sources */,
 			);

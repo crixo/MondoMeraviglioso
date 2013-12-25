@@ -11,10 +11,19 @@
 #import "LoginViewController.h"
 #import "Base64.h"
 #import "ImageHelper.h"
+#import "RegisterCommand.h"
 
 @interface RegisterViewController ()
 
 @property (strong, nonatomic) IBOutlet GSRadioButtonSetController *userTypeRadioButtonSet;
+@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
+
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+
+@property (strong, nonatomic) IBOutlet UITextField *screenNameTextField;
+
+@property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
+
 @property (strong, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 - (IBAction)chooseThumbnail:(id)sender;
 
@@ -23,9 +32,10 @@
 
 @end
 
-@implementation RegisterViewController{
+@implementation RegisterViewController
+{
     NSUInteger *selectedUserTypeIndex;
-
+    NSString *thumbnail;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,6 +50,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    thumbnail = @"";
 	// Do any additional setup after loading the view.
     /*
     NSArray *options =[[NSArray alloc]
@@ -68,7 +80,16 @@
 
 - (IBAction)register:(id)sender
 {
-    NSLog(@"selected user type %@", [User getTypeAsString:(int)selectedUserTypeIndex]);
+    RegisterCommand *registerCmd = [[RegisterCommand alloc]initWithKey];
+    registerCmd.type = (int)selectedUserTypeIndex;
+    registerCmd.email = self.emailTextField.text;
+    registerCmd.password = self.passwordTextField.text;
+    registerCmd.screenName = self.screenNameTextField.text;
+    registerCmd.description = self.descriptionTextView.text;
+    
+    UserService *sharedUserService = [UserService sharedUserService];
+    sharedUserService.delegate = self;
+    [sharedUserService register:registerCmd];
 }
 
 
@@ -117,8 +138,8 @@
     
     self.thumbnailImageView.image = image;
     
-    NSString * actualString = [Base64 encode:imageData];
-    NSLog(@"%@",actualString);
+    thumbnail = [Base64 encode:imageData];
+    NSLog(@"%@",thumbnail);
     
 //    [[self.view viewWithTag:100023] removeFromSuperview];
 //    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(320/2-200/2, 10, 100, 100)];

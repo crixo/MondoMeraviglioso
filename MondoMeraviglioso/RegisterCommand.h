@@ -11,10 +11,14 @@
 
 @interface RegisterCommand : NSObject
 
+@property (nonatomic, strong) NSString *userKey;
 @property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *screenName;
-@property (nonatomic, assign) UserType type;
+@property (nonatomic, assign) int type;
 @property (nonatomic, strong) NSString *description;
-@property (nonatomic, strong) UIImage *thumbnail;
+@property (nonatomic, strong) NSString *thumbnail;
+
+- (RegisterCommand*)initWithKey;
 
 @end

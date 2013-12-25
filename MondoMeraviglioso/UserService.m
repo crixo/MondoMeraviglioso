@@ -85,11 +85,27 @@
 
 - (void) register:(RegisterCommand *)registerCommand
 {
-    User *user = [[User alloc]initWithMandatory:registerCommand.email :registerCommand.screenName :registerCommand.type];
+    NSMutableDictionary *jsonData= [[NSMutableDictionary alloc] init];
+    [jsonData setObject:registerCommand.userKey forKey:@"userKey"];
+    [jsonData setObject:registerCommand.email forKey:@"email"];
+    [jsonData setObject:registerCommand.password forKey:@"pwd"];
+    [jsonData setObject:registerCommand.screenName forKey:@"screenName"];
+    [jsonData setObject:registerCommand.description forKey:@"description"];
+    [jsonData setObject:registerCommand.thumbnail forKey:@"thumbnail"];
+    [jsonData setObject:[NSNumber numberWithInt:registerCommand.type] forKey:@"type"];
     
-    self.currentUser = user;
-    
-    [users addObject:user];
+    [sharedJsonClient post:jsonData to:@"user-create.php"
+                   success:^(NSDictionary *userData)
+     {
+         User* user = [[User alloc]initWithDictionary:jsonData];
+         _currentUser = user;
+         [sharedLocationManager.locationManager startUpdatingLocation];
+         [self.delegate registrationSucceded:user];
+     }
+                   failure:^(NSError *error)
+     {
+         [self.delegate commandFailed:registerCommand withError:error];
+     }];
     
 }
 

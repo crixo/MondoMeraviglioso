@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "GSRadioButtonSetController.h"
+#import "UserService.h"
 
-@interface RegisterViewController : UIViewController<GSRadioButtonSetControllerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface RegisterViewController : UIViewController<
+UserServiceDelegate,
+GSRadioButtonSetControllerDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
