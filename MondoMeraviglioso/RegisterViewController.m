@@ -12,6 +12,7 @@
 #import "Base64.h"
 #import "ImageHelper.h"
 #import "RegisterCommand.h"
+#import "GuiHelper.h"
 
 @interface RegisterViewController ()
 
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
 
 @property (strong, nonatomic) IBOutlet UIImageView *thumbnailImageView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 - (IBAction)chooseThumbnail:(id)sender;
 
 - (IBAction)register:(id)sender;
@@ -34,7 +36,7 @@
 
 @implementation RegisterViewController
 {
-    NSUInteger *selectedUserTypeIndex;
+    NSNumber *selectedUserTypeIndex;
     NSString *thumbnail;
 }
 
@@ -50,6 +52,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     
     thumbnail = @"";
 	// Do any additional setup after loading the view.
@@ -74,18 +77,19 @@
 - (void)radioButtonSetController:(GSRadioButtonSetController *)controller didSelectButtonAtIndex:(NSUInteger)selectedIndex
 {
     //self.selectedIndexLabel.text = [NSString stringWithFormat:@"%d", selectedIndex];
-    selectedUserTypeIndex = &selectedIndex;
+    selectedUserTypeIndex = [[NSNumber alloc]initWithInteger: selectedIndex];
     NSLog(@"selected user type: %lu", (unsigned long)selectedIndex);
 }
 
 - (IBAction)register:(id)sender
 {
     RegisterCommand *registerCmd = [[RegisterCommand alloc]initWithKey];
-    registerCmd.type = (int)selectedUserTypeIndex;
+    registerCmd.type = [selectedUserTypeIndex intValue];
     registerCmd.email = self.emailTextField.text;
     registerCmd.password = self.passwordTextField.text;
     registerCmd.screenName = self.screenNameTextField.text;
     registerCmd.description = self.descriptionTextView.text;
+    registerCmd.thumbnail = thumbnail;
     
     UserService *sharedUserService = [UserService sharedUserService];
     sharedUserService.delegate = self;
@@ -110,11 +114,19 @@
 }
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    UIImagePickerController *imagePickController = [segue destinationViewController];
-    imagePickController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    imagePickController.delegate=self;
-    imagePickController.allowsEditing=TRUE;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"registerMainSegue"])
+    {
+        UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
+    }
+    else if([segue.identifier isEqualToString:@"ImagePickerSegue"])
+    {
+        UIImagePickerController *imagePickController = [segue destinationViewController];
+        imagePickController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePickController.delegate=self;
+        imagePickController.allowsEditing=TRUE;
+    }
 }
 
 
@@ -152,5 +164,23 @@
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) commandFailed:(id)command withError:(NSError *)error
+{
+    [self.spinner stopAnimating];
+    
+    [GuiHelper showError:error withTitle:@"Registration failed"];
+    
+    NSLog(@"%@",[error localizedDescription]);
+}
+
+- (void) registrationSucceded:(User *)user
+{
+    [self.spinner stopAnimating];
+    NSLog(@"user %@ logged in", user.key);
+    //MainViewController *mainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    //[self presentViewController:mainViewController animated:NO completion:nil];
+    [self performSegueWithIdentifier:@"registerMainSegue" sender:self];
 }
 @end

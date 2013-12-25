@@ -40,6 +40,7 @@
 		9746C3E2182431EF009FDF0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9746C3E1182431EF009FDF0B /* CoreLocation.framework */; };
 		974A4FD518512E6A009C9422 /* UserMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974A4FD418512E6A009C9422 /* UserMessageListViewController.m */; };
 		974C6E7B185A5A19006616BA /* JsonClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C6E7A185A5A19006616BA /* JsonClient.m */; };
+		9751618C186B63A7005A0B34 /* GuiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9751618B186B63A7005A0B34 /* GuiHelper.m */; };
 		9762B5A2185126AB008884CB /* LocalizationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9762B5A1185126AA008884CB /* LocalizationHelper.m */; };
 		9769DE4918230947003A6F50 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9769DE4818230947003A6F50 /* RegisterViewController.m */; };
 		9769DE5218230B25003A6F50 /* MIRadioButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 9769DE4D18230B25003A6F50 /* MIRadioButtonGroup.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -126,6 +127,8 @@
 		974A4FD418512E6A009C9422 /* UserMessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessageListViewController.m; sourceTree = "<group>"; };
 		974C6E79185A5A19006616BA /* JsonClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonClient.h; sourceTree = "<group>"; };
 		974C6E7A185A5A19006616BA /* JsonClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonClient.m; sourceTree = "<group>"; };
+		9751618A186B63A7005A0B34 /* GuiHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuiHelper.h; sourceTree = "<group>"; };
+		9751618B186B63A7005A0B34 /* GuiHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuiHelper.m; sourceTree = "<group>"; };
 		9762B5A0185126AA008884CB /* LocalizationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationHelper.h; sourceTree = "<group>"; };
 		9762B5A1185126AA008884CB /* LocalizationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationHelper.m; sourceTree = "<group>"; };
 		9769DE4718230947003A6F50 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -371,6 +374,8 @@
 		974C6E78185A59C0006616BA /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				9751618A186B63A7005A0B34 /* GuiHelper.h */,
+				9751618B186B63A7005A0B34 /* GuiHelper.m */,
 				974C6E79185A5A19006616BA /* JsonClient.h */,
 				974C6E7A185A5A19006616BA /* JsonClient.m */,
 				97A031F51861139800AEDE8D /* ImageHelper.h */,
@@ -571,6 +576,7 @@
 				9769DE5318230B25003A6F50 /* MIRadioButtonGroupAppDelegate.m in Sources */,
 				4ECC063F18206C0E0000CD59 /* UserService.m in Sources */,
 				4ECC063C18206BF10000CD59 /* LoginCommand.m in Sources */,
+				9751618C186B63A7005A0B34 /* GuiHelper.m in Sources */,
 				972496991843F850008FC6DB /* NearestUserCell.m in Sources */,
 				4ECC0630182053130000CD59 /* User.m in Sources */,
 				97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */,

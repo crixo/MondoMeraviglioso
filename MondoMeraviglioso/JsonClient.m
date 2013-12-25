@@ -111,6 +111,24 @@ typedef void (^ Failure)(NSError *);
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
         int statusCode = [httpResponse statusCode];
         NSLog(@"JsonClient %@ - %d", actionUrl, statusCode);
+        if (statusCode > 400 && !error)
+        {
+            NSString *httpError;
+            if (data)
+            {
+                httpError = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            }
+            
+            NSDictionary *errorInfo;
+            errorInfo
+            = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:
+                                                  NSLocalizedString(@"Server returned status code %d: %@",@""),
+                                                  statusCode, httpError]
+                                          forKey:NSLocalizedDescriptionKey];
+            error = [NSError errorWithDomain:@"Api error"
+                                        code:statusCode
+                                    userInfo:errorInfo];
+        }
     }
     
     if (error)

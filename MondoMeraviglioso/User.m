@@ -78,7 +78,7 @@
     NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
     CFRelease(newUniqueId);
     
-    return uuidString;
+    return [uuidString stringByReplacingOccurrencesOfString:@"-" withString:@""];
 }
 
 @end

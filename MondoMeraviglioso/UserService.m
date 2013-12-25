@@ -86,23 +86,23 @@
 - (void) register:(RegisterCommand *)registerCommand
 {
     NSMutableDictionary *jsonData= [[NSMutableDictionary alloc] init];
-    [jsonData setObject:registerCommand.userKey forKey:@"userKey"];
+    [jsonData setObject:registerCommand.userKey forKey:@"key"];
     [jsonData setObject:registerCommand.email forKey:@"email"];
     [jsonData setObject:registerCommand.password forKey:@"pwd"];
     [jsonData setObject:registerCommand.screenName forKey:@"screenName"];
     [jsonData setObject:registerCommand.description forKey:@"description"];
     [jsonData setObject:registerCommand.thumbnail forKey:@"thumbnail"];
-    [jsonData setObject:[NSNumber numberWithInt:registerCommand.type] forKey:@"type"];
+    [jsonData setObject:[NSNumber numberWithInteger:registerCommand.type] forKey:@"type"];
     
     [sharedJsonClient post:jsonData to:@"user-create.php"
-                   success:^(NSDictionary *userData)
+    success:^(NSDictionary *userData)
      {
          User* user = [[User alloc]initWithDictionary:jsonData];
          _currentUser = user;
          [sharedLocationManager.locationManager startUpdatingLocation];
          [self.delegate registrationSucceded:user];
      }
-                   failure:^(NSError *error)
+    failure:^(NSError *error)
      {
          [self.delegate commandFailed:registerCommand withError:error];
      }];
@@ -170,7 +170,7 @@
 
 -(void) sendLocationToServer
 {
-
+    if(self.currentUser == Nil) return;
     
     NSDate *currentDate = [[NSDate alloc] init];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -190,31 +190,16 @@
     [jsonData setObject:[NSString stringWithFormat:@"%f", self.currentUser.location.coordinate.latitude] forKey:@"latitude"];
     [jsonData setObject:[NSString stringWithFormat:@"%f", self.currentUser.location.coordinate.longitude] forKey:@"longitude"];
     
-    NSString *urlString = [NSString stringWithFormat:@"%@/update-user-location4.php", restBaseUrl];
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
-    NSLog(@"%@", urlString);
-    
-    SBJsonWriter *jsonWriter = [[SBJsonWriter alloc] init];
-    NSString *jsonPostBody = [jsonWriter stringWithObject:jsonData];
-    
-    NSLog(@"jsonPostBody: %@", jsonPostBody);
-    NSData *requestData = [NSData dataWithBytes:[jsonPostBody UTF8String] length:[jsonPostBody length]];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:apiKey forHTTPHeaderField:@"X-Api-Authorization"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
-    [request setHTTPBody: requestData];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        if (error)
-        {
-            NSLog(@"Error: %@", error);
-        }
-    }];
-    
+    [sharedJsonClient post:jsonData to:@"user-location.php"
+    success:^(NSDictionary *userData)
+     {
+         NSLog(@"Location for user %@ has been successfully sent",
+               self.currentUser.key);
+     }
+    failure:^(NSError *error)
+     {
+         NSLog(@"Unable to send location for user %@: %@", self.currentUser.key, error);
+     }];
 }
 
 @end
