@@ -109,22 +109,59 @@
     
 }
 
-- (void) GetByLocation:(CLLocation *)location inARangeOf:(int)kilometers success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure
+- (void) getByLocation:(CLLocation *)location inARangeOf:(int)kilometers
+               success:(void (^)(NSArray *))success
+               ko:(void (^)(NSError *))ko
 {
-    NSMutableArray *nearestUsers = [[NSMutableArray alloc]init];
     
-    for (int i = 0; i < [users count]; i++)
-    {
-        User *user = [users objectAtIndex:i];
-        [nearestUsers addObject:
-         [[User alloc]initWithLocation
-            :user.email
-            :user.screenName
-            :user.type
-          :[LocalizationHelper moveLocation :location :(500 * (i+1)) :(i%4 * 90)]]];
-    }
+    NSString *url = [NSString stringWithFormat:@"user-nearest.php?userKey=%@&lat=%f&lon=%f&dist=%d&limit=1000&skip=",
+                     self.currentUser.key,
+                     location.coordinate.latitude,
+                     location.coordinate.longitude,
+                     kilometers];
     
-    success(nearestUsers);
+    [sharedJsonClient get:url
+    success:^(NSDictionary *jsonUsers)
+     {
+         NSLog(@"GetByLocation users: %@", jsonUsers);
+         NSMutableArray *nearestUsers = [[NSMutableArray alloc]init];
+         
+         NSMutableArray *results = [jsonUsers valueForKey:@"users"];
+         for (NSDictionary *userJson in results) {
+             [nearestUsers addObject:[[User alloc] initWithDictionary:userJson]];
+         }
+         
+         success(nearestUsers);
+     }
+    failure:^(NSError *error)
+     {
+         NSLog(@"GetByLocation failed: %@", error);
+         ko(error);
+     }];
+    
+}
+
+- (void) logout
+{
+    if(self.currentUser == Nil) return;
+    
+    NSString *userKey = self.currentUser.key;
+    [sharedLocationManager.locationManager stopUpdatingLocation];
+    self.currentUser = Nil;
+    
+    NSMutableDictionary *jsonData= [[NSMutableDictionary alloc] init];
+    [jsonData setObject:userKey forKey:@"userKey"];
+    
+    [sharedJsonClient post:jsonData to:@"user-logout.php"
+    success:^(NSDictionary *userData)
+     {
+         NSLog(@"Lougout succeded for %@", userKey);
+     }
+    failure:^(NSError *error)
+     {
+         NSLog(@"Lougout falied for %@: %@", userKey, [error localizedDescription]);
+     }];
+    
 }
 
 - (User*) findByCredentials:(NSString *)email :(NSString *)password

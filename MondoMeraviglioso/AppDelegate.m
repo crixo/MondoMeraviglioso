@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LocalizationManager.h"
-#import "LoginViewController.h"
+#import "UserService.h"
 
 
 @implementation AppDelegate
@@ -49,6 +48,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    UserService *userService = [UserService sharedUserService];
+    [userService logout];
 }
 
 @end

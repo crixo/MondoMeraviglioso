@@ -13,7 +13,7 @@
 + (id)sharedJsonClient;
 
 -(void)get :(NSString*) actionUrl
-    success:(void (^)(NSDictionary *users))success
+    success:(void (^)(NSDictionary *jsonResult))success
     failure:(void (^)(NSError *error)) failure;
 
 -(void)post :(NSDictionary*)jsonData to:(NSString*)actionUrl

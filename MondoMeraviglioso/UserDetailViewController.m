@@ -8,6 +8,7 @@
 
 #import "UserDetailViewController.h"
 #import "User.h"
+#import "Base64.h"
 
 @interface UserDetailViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *userTypeLabel;
@@ -38,6 +39,13 @@
     self.title = self.user.screenName;
     self.userEmailLabel.text = self.user.email;
     self.userTypeLabel.text = [User getTypeAsString:(int)self.user.type];
+    
+    if(self.user.thumbnail != Nil)
+    {
+        [Base64 initialize];
+        NSData * data = [Base64 decode:self.user.thumbnail];
+        self.userThumbnailImageView.image = [UIImage imageWithData:data];
+    }
     
     //self.userDescriptionTextView.hidden = (self.user.description.length == 0);
     self.userDescriptionTextView.text = (self.user.description.length == 0)

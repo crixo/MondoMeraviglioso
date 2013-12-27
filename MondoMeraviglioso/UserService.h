@@ -36,9 +36,11 @@
 
 - (void) update:(UpdateCommand *)updateCommand;
 
-- (void) GetByLocation:(CLLocation*) location
+- (void) getByLocation:(CLLocation*) location
             inARangeOf:(int) kilometers
             success:(void (^)(NSArray *users))success
-            failure:(void (^)(NSError *error)) failure;
+            ko:(void (^)(NSError *error)) ko;
+
+- (void) logout;
 
 @end

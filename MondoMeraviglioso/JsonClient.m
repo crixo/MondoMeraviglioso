@@ -51,13 +51,13 @@ typedef void (^ Failure)(NSError *);
     success:(void (^)(NSDictionary *))success
     failure:(void (^)(NSError *))failure
 {
-    NSString *urlString = [NSString stringWithFormat:@"%@/%@", actionUrl, restBaseUrl];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@", restBaseUrl, actionUrl];
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSLog(@"%@", urlString);
     
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    [request setHTTPMethod:@"POST"];
+    [request setHTTPMethod:@"GET"];
     [request setValue:apiKey forHTTPHeaderField:@"X-Api-Authorization"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     

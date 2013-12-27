@@ -134,7 +134,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    NSData *imageData = UIImagePNGRepresentation(image);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
     int imageSize = imageData.length/1024;
     
     NSLog(@"selected image size: %d kb", imageSize);

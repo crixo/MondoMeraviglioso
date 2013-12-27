@@ -14,12 +14,15 @@
 #import "User.h"
 #import "NearestUsersViewController.h"
 #import "UserMessageListViewController.h"
+#import "LoginViewController.h"
 
 @interface MainViewController ()
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *userMessageListButton;
 
+
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)refresh:(id)sender;
+- (IBAction)logout:(id)sender;
 
 @end
 
@@ -98,7 +101,7 @@
     }
     
     UserService *userService = [UserService sharedUserService];
-    [userService GetByLocation:myCurrentLocation inARangeOf:range
+    [userService getByLocation:myCurrentLocation inARangeOf:range
            success:^(NSArray *users) {
                mappedUsers = users;
                for (User *user in users) {
@@ -111,8 +114,15 @@
                          user.location.coordinate.longitude);
                }
     }
-                       failure:nil];
+                       ko:nil];
 }
 
 
+- (IBAction)logout:(id)sender
+{
+    UserService *userService = [UserService sharedUserService];
+    [userService logout];
+    LoginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    [self presentViewController:viewController animated:NO completion:nil];
+}
 @end

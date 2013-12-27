@@ -39,6 +39,14 @@
     self.key = [dic objectForKey:@"key"];
     self.email = [dic objectForKey:@"email"];
     self.screenName = [dic objectForKey:@"screenName"];
+    self.thumbnail = [dic objectForKey:@"thumbnail"];
+    
+    NSNumber *lat = [dic objectForKey:@"lat"];
+    NSNumber *lon = [dic objectForKey:@"lon"];
+    if(lat!=Nil && lon!=Nil)
+    {
+        self.location = [[CLLocation alloc] initWithLatitude:[lat doubleValue] longitude:[lon doubleValue]];
+    }
     
     NSNumber *num = [dic objectForKey:@"type"];
     self.type = [num intValue];

@@ -20,7 +20,7 @@ typedef enum UserType{
 @property (nonatomic, strong) NSString *screenName;
 @property (nonatomic, assign) int type;
 @property (nonatomic, strong) NSString *description;
-@property (nonatomic, strong) NSString *thumbnailUrl;
+@property (nonatomic, strong) NSString *thumbnail;
 @property (nonatomic, strong) CLLocation *location;
 
 + (NSString*) getTypeAsString:(int)type;
