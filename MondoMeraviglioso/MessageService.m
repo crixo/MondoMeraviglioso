@@ -46,17 +46,19 @@
     [jsonData setObject:command.recipientKey forKey:@"recipientKey"];
     [jsonData setObject:command.senderKey forKey:@"senderKey"];
     [jsonData setObject:command.title forKey:@"title"];
-    [jsonData setObject:command.body forKey:@"message"];
+    [jsonData setObject:command.body forKey:@"body"];
     [jsonData setObject:command.thumbnail forKey:@"thumbnail"];
     
     [jsonClient post:jsonData to:@"user-message-create.php"
     success:^(NSDictionary *jsonResult)
      {
          NSLog(@"Message %@ sent", command.messageKey);
+         success();
      }
     failure:^(NSError *error)
      {
          NSLog(@"Sending message %@ failed: %@", command.messageKey, [error localizedDescription]);
+         ko(error);
      }];
 }
 

@@ -67,6 +67,8 @@
     {
         self.titleTextField.text = @"";
         self.messageTextView.text = @"";
+        self.imageView.image = Nil;
+        self.thumbnail = Nil;
         
         NSString *sentMsg = [NSString stringWithFormat:
                              @"Message to %@ has been successfully sent",
