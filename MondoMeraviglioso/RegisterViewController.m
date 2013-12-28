@@ -25,6 +25,8 @@
 
 @property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
 
+@property (nonatomic, strong) UIPopoverController *popOver;
+
 @property (strong, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 - (IBAction)chooseThumbnail:(id)sender;
@@ -110,7 +112,15 @@
     imagePickController.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
     imagePickController.delegate=self;
     imagePickController.allowsEditing=TRUE;
-    [self presentViewController:imagePickController animated:YES completion:nil];
+    
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:imagePickController];
+        //[popover presentPopoverFromRect:self.selectedImageView.bounds inView:self.selectedImageView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        self.popOver = popover;
+    } else {
+        [self presentViewController:imagePickController animated:YES completion:nil];
+    }
 }
 
 
@@ -130,8 +140,11 @@
 }
 
 
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
     [self dismissViewControllerAnimated:YES completion:nil];
+    self.popOver = Nil;
+
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
@@ -164,6 +177,7 @@
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self dismissViewControllerAnimated:YES completion:nil];
+    self.popOver = Nil;
 }
 
 - (void) commandFailed:(id)command withError:(NSError *)error

@@ -23,12 +23,18 @@
         }
     }
     
-    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:title
-                                                         message:errorMessage
+    [GuiHelper showMessage:errorMessage withTitle:title];
+}
+
++ (void) showMessage:(NSString *)text withTitle:(NSString *)title
+{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                         message:text
                                                         delegate:nil
                                                cancelButtonTitle:@"OK"
                                                otherButtonTitles:nil];
-    [errorAlert show];
+    [alert show];
 }
 
 @end

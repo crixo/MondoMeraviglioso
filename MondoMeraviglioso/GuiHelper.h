@@ -10,4 +10,5 @@
 
 @interface GuiHelper : NSObject
 + (void) showError:(NSError *)error withTitle:(NSString *)title;
++ (void) showMessage:(NSString *)text withTitle:(NSString *)title;
 @end

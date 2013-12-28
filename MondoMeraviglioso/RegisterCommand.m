@@ -7,7 +7,7 @@
 //
 
 #import "RegisterCommand.h"
-#import "User.h"
+#import "DataHelper.h"
 
 @implementation RegisterCommand
 
@@ -15,7 +15,7 @@
 {
     self = [super init];
     
-    self.userKey = [User getUUID];
+    self.userKey = [DataHelper getUUID];
     return self;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "DataHelper.h"
 #import <CoreLocation/CoreLocation.h>
 
 @implementation User
@@ -15,7 +16,7 @@
 {
     self = [super init];
     
-    self.key = [User getUUID];
+    self.key = [DataHelper getUUID];
     self.email = email;
     self.screenName = screenName;
     self.type = type;
@@ -25,7 +26,7 @@
 - (User*)initWithLocation:(NSString*)email :(NSString*)screenName :(int)type :(CLLocation *) location
 {
     self = [super init];
-    self.key = [User getUUID];
+    self.key = [DataHelper getUUID];
     self.email = email;
     self.screenName = screenName;
     self.type = type;
@@ -80,13 +81,6 @@
     }
 }
 
-+(NSString *)getUUID
-{
-    CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
-    NSString * uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
-    CFRelease(newUniqueId);
-    
-    return [uuidString stringByReplacingOccurrencesOfString:@"-" withString:@""];
-}
+
 
 @end

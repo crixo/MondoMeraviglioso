@@ -7,11 +7,20 @@
 //
 
 #import "UserWriteMessageViewController.h"
+#import "SendMessageCommand.h"
+#import "MessageService.h"
+#import "UserService.h"
+#import "User.h"
+#import "MessageRecipient.h"
+#import "GuiHelper.h"
 
 @interface UserWriteMessageViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *messageTextView;
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) UIPopoverController *popOver;
 - (IBAction)sendMessage:(id)sender;
+- (IBAction)chooseImage:(id)sender;
 
 @end
 
@@ -38,6 +47,44 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)sendMessage:(id)sender {
+- (IBAction)sendMessage:(id)sender
+{
+    UserService *userService = [UserService sharedUserService];
+    MessageService *messageService = [MessageService shared];
+    
+    SendMessageCommand *cmd =
+        [[SendMessageCommand alloc] initWithSenderKey:userService.currentUser.key
+                                RecipientKey:self.messageRecipient.userKey
+                                Title:self.titleTextField.text
+                                Body:self.messageTextView.text];
+    if(self.thumbnail != Nil)
+    {
+        cmd.thumbnail = self.thumbnail;
+    }
+    
+    [messageService send:cmd
+    success:^
+    {
+        self.titleTextField.text = @"";
+        self.messageTextView.text = @"";
+        
+        NSString *sentMsg = [NSString stringWithFormat:
+                             @"Message to %@ has been successfully sent",
+                             self.messageRecipient.screenName];
+        [GuiHelper showMessage:sentMsg withTitle:NSLocalizedString(@"MessageSent", @"")];
+    }
+    ko:^(NSError *error)
+    {
+        [GuiHelper showError:error withTitle:NSLocalizedString(@"MessageFailed", @"")];
+    }];
+    
 }
+
+- (IBAction)chooseImage:(id)sender
+{
+    [self presentImagePicker];
+}
+
+
+
 @end

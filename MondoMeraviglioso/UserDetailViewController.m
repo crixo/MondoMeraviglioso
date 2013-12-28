@@ -7,6 +7,8 @@
 //
 
 #import "UserDetailViewController.h"
+#import "UserWriteMessageViewController.h"
+#import "MessageRecipient.h"
 #import "User.h"
 #import "Base64.h"
 
@@ -63,6 +65,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)sendMessage:(id)sender {
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UserWriteMessageViewController *viewController = segue.destinationViewController;
+    
+    viewController.messageRecipient = [[MessageRecipient alloc]initWithUserKey:self.user.key AndScreenName:self.user.screenName];
 }
 @end

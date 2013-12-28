@@ -41,6 +41,8 @@
             success:(void (^)(NSArray *users))success
             ko:(void (^)(NSError *error)) ko;
 
+
+
 - (void) logout;
 
 @end
