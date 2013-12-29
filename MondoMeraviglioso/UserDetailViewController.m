@@ -41,13 +41,7 @@
     self.title = self.user.screenName;
     self.userEmailLabel.text = self.user.email;
     self.userTypeLabel.text = [User getTypeAsString:(int)self.user.type];
-    
-    if(self.user.thumbnail != Nil)
-    {
-        [Base64 initialize];
-        NSData * data = [Base64 decode:self.user.thumbnail];
-        self.userThumbnailImageView.image = [UIImage imageWithData:data];
-    }
+    self.userThumbnailImageView.image = self.user.thumbnail;
     
     //self.userDescriptionTextView.hidden = (self.user.description.length == 0);
     self.userDescriptionTextView.text = (self.user.description.length == 0)

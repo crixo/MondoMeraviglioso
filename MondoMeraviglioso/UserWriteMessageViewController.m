@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) UIPopoverController *popOver;
+@property (strong, nonatomic) IBOutlet UILabel *writeToLabel;
 - (IBAction)sendMessage:(id)sender;
 - (IBAction)chooseImage:(id)sender;
 
@@ -39,6 +40,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.writeToLabel.text = [NSString stringWithFormat:@"Write a message to %@", self.messageRecipient.screenName];
 }
 
 - (void)didReceiveMemoryWarning

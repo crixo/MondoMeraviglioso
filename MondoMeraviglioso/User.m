@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "DataHelper.h"
+#import "Base64.h"
 #import <CoreLocation/CoreLocation.h>
 
 @implementation User
@@ -40,7 +41,14 @@
     self.key = [dic objectForKey:@"key"];
     self.email = [dic objectForKey:@"email"];
     self.screenName = [dic objectForKey:@"screenName"];
-    self.thumbnail = [dic objectForKey:@"thumbnail"];
+    
+    NSString *thumbnail = [dic objectForKey:@"thumbnail"];
+    if(thumbnail != (id)[NSNull null] && thumbnail.length > 0 )
+    {
+        [Base64 initialize];
+        NSData * data = [Base64 decode:thumbnail];
+        self.thumbnail  = [UIImage imageWithData:data];
+    }
     
     NSNumber *lat = [dic objectForKey:@"lat"];
     NSNumber *lon = [dic objectForKey:@"lon"];
