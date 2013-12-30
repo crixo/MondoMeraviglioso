@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MessageRecipient;
+@class MessageUser;
 #import "ChooseImageViewController.h"
 
 @interface UserWriteMessageViewController : ChooseImageViewController
-@property (nonatomic, strong) MessageRecipient *messageRecipient;
+@property (nonatomic, strong) MessageUser *messageRecipient;
 @end

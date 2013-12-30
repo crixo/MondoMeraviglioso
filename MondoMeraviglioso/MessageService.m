@@ -9,6 +9,7 @@
 #import "MessageService.h"
 #import "SendMessageCommand.h"
 #import "JsonClient.h"
+#import "Message.h"
 
 @implementation MessageService
 {
@@ -58,6 +59,29 @@
     failure:^(NSError *error)
      {
          NSLog(@"Sending message %@ failed: %@", command.messageKey, [error localizedDescription]);
+         ko(error);
+     }];
+}
+
+-(void) getMessagesFor:(NSString *)userKey
+               success:(void (^)(NSArray *messages))success ko:(void (^)(NSError *))ko
+{
+    [jsonClient get:@"user-message-list.php"
+             success:^(NSDictionary *jsonResult)
+     {
+         NSLog(@"Getting messages for %@: %@", userKey, jsonResult);
+         NSMutableArray *messages = [[NSMutableArray alloc]init];
+         
+         NSMutableArray *results = [jsonResult valueForKey:@"messages"];
+         for (NSDictionary *msgJson in results) {
+             [messages addObject:[[Message alloc] initWithDictionary:msgJson]];
+         }
+         
+         success(messages);
+     }
+             failure:^(NSError *error)
+     {
+         NSLog(@"Getting messages for %@ failed: %@", userKey, [error localizedDescription]);
          ko(error);
      }];
 }

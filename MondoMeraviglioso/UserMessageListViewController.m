@@ -7,8 +7,13 @@
 //
 
 #import "UserMessageListViewController.h"
+#import "Message.h"
+#import "MessageCell.h"
+#import "User.h"
+#import "UserService.h"
 
 @interface UserMessageListViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -35,6 +40,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.messages.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    Message *message = [self.messages objectAtIndex:indexPath.row];
+    
+    UserService *userService = [UserService sharedUserService];
+    
+    return cell;
 }
 
 @end

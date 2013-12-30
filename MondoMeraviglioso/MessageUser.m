@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 WebProfessor. All rights reserved.
 //
 
-#import "MessageRecipient.h"
+#import "MessageUser.h"
 
-@implementation MessageRecipient
+@implementation MessageUser
 
--(MessageRecipient *)initWithUserKey :(NSString *)userKey AndScreenName:(NSString *)screenName
+-(MessageUser *)initWithUserKey :(NSString *)userKey AndScreenName:(NSString *)screenName
 {
     self = [super init];
     

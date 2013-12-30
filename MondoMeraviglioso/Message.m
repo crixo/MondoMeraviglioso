@@ -7,7 +7,7 @@
 //
 
 #import "Message.h"
-#import "MessageRecipient.h"
+#import "MessageUser.h"
 
 @implementation Message
 
@@ -15,7 +15,9 @@
 {
     self = [super init];
     self.key = [dic objectForKey:@"key"];
-    self.recipient = [[MessageRecipient alloc ]initWithUserKey:[dic objectForKey:@"recipientKey"]
+    self.sender = [[MessageUser alloc ]initWithUserKey:[dic objectForKey:@"senderKey"]
+                                            AndScreenName:[dic objectForKey:@"senderScreenName"]];
+    self.recipient = [[MessageUser alloc ]initWithUserKey:[dic objectForKey:@"recipientKey"]
                                                  AndScreenName:[dic objectForKey:@"recipientScreenName"]];
     self.title = [dic objectForKey:@"title"];
     self.body = [dic objectForKey:@"message"];

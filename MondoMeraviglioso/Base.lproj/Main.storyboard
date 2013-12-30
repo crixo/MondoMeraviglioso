@@ -131,11 +131,17 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pxk-HU-A0U" id="1en-J2-4Nm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Message List" id="ZgC-tF-kHU"/>
+                    <connections>
+                        <outlet property="tableView" destination="RMq-uf-HAY" id="2RH-oS-Yed"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmT-qU-Txm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

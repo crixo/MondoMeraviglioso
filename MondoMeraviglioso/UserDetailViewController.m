@@ -8,7 +8,7 @@
 
 #import "UserDetailViewController.h"
 #import "UserWriteMessageViewController.h"
-#import "MessageRecipient.h"
+#import "MessageUser.h"
 #import "User.h"
 #import "Base64.h"
 
@@ -63,6 +63,6 @@
 {
     UserWriteMessageViewController *viewController = segue.destinationViewController;
     
-    viewController.messageRecipient = [[MessageRecipient alloc]initWithUserKey:self.user.key AndScreenName:self.user.screenName];
+    viewController.messageRecipient = [[MessageUser alloc]initWithUserKey:self.user.key AndScreenName:self.user.screenName];
 }
 @end

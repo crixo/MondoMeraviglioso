@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class User;
 
-@interface UserMessageListViewController : UIViewController
-    @property (nonatomic, strong) User *user;
+@interface UserMessageListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSArray *messages;
 @end

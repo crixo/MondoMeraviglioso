@@ -11,7 +11,7 @@
 #import "MessageService.h"
 #import "UserService.h"
 #import "User.h"
-#import "MessageRecipient.h"
+#import "MessageUser.h"
 #import "GuiHelper.h"
 
 @interface UserWriteMessageViewController ()

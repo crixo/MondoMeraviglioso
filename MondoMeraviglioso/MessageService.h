@@ -16,4 +16,12 @@
 - (void) send:(SendMessageCommand*) command
              success:(void (^)())success
                   ko:(void (^)(NSError *error)) ko;
+
+- (void) getMessagesFor:(NSString*) userKey
+      success:(void (^)(NSArray *messages))success
+           ko:(void (^)(NSError *error)) ko;
+
+- (void) getMessagesSentBy:(NSString*) userKey
+                success:(void (^)(NSArray *messages))success
+                     ko:(void (^)(NSError *error)) ko;
 @end

@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class MessageRecipient;
+@class MessageUser;
 
 @interface Message : NSObject
 
 @property (nonatomic, strong) NSString *key;
-@property (nonatomic, strong) MessageRecipient *recipient;
+@property (nonatomic, strong) MessageUser *sender;
+@property (nonatomic, strong) MessageUser *recipient;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *body;
 @property (nonatomic, strong) NSDate *sentAt;

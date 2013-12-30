@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MessageRecipient : NSObject
+@interface MessageUser : NSObject
 @property (nonatomic, strong) NSString *userKey;
 @property (nonatomic, strong) NSString *screenName;
 
--(MessageRecipient *)initWithUserKey :(NSString *)userKey AndScreenName:(NSString *)screenName;
+-(MessageUser *)initWithUserKey :(NSString *)userKey AndScreenName:(NSString *)screenName;
 @end

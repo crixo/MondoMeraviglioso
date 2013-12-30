@@ -62,7 +62,7 @@
 		97B6DE951825853D001AC9E3 /* LocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97B6DE941825853D001AC9E3 /* LocalizationManager.m */; };
 		97C7EA82186DE037000D161F /* UserWriteMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C7EA81186DE037000D161F /* UserWriteMessageViewController.m */; };
 		97E0F1C7186F2C1D00FF90F1 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1C6186F2C1D00FF90F1 /* Message.m */; };
-		97E0F1CB186F2E8A00FF90F1 /* MessageRecipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1CA186F2E8A00FF90F1 /* MessageRecipient.m */; };
+		97E0F1CB186F2E8A00FF90F1 /* MessageUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1CA186F2E8A00FF90F1 /* MessageUser.m */; };
 		97E0F1CE186F2F0400FF90F1 /* SendMessageCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1CD186F2F0400FF90F1 /* SendMessageCommand.m */; };
 		97E0F1D1186F2F2400FF90F1 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1D0186F2F2400FF90F1 /* DataHelper.m */; };
 		97E0F1D4186F32DF00FF90F1 /* MessageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1D3186F32DF00FF90F1 /* MessageService.m */; };
@@ -178,8 +178,8 @@
 		97C7EA81186DE037000D161F /* UserWriteMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserWriteMessageViewController.m; sourceTree = "<group>"; };
 		97E0F1C5186F2C1D00FF90F1 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		97E0F1C6186F2C1D00FF90F1 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
-		97E0F1C9186F2E8A00FF90F1 /* MessageRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageRecipient.h; sourceTree = "<group>"; };
-		97E0F1CA186F2E8A00FF90F1 /* MessageRecipient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageRecipient.m; sourceTree = "<group>"; };
+		97E0F1C9186F2E8A00FF90F1 /* MessageUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUser.h; sourceTree = "<group>"; };
+		97E0F1CA186F2E8A00FF90F1 /* MessageUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUser.m; sourceTree = "<group>"; };
 		97E0F1CC186F2F0400FF90F1 /* SendMessageCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageCommand.h; sourceTree = "<group>"; };
 		97E0F1CD186F2F0400FF90F1 /* SendMessageCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageCommand.m; sourceTree = "<group>"; };
 		97E0F1CF186F2F2400FF90F1 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
@@ -498,8 +498,8 @@
 			children = (
 				97E0F1C5186F2C1D00FF90F1 /* Message.h */,
 				97E0F1C6186F2C1D00FF90F1 /* Message.m */,
-				97E0F1C9186F2E8A00FF90F1 /* MessageRecipient.h */,
-				97E0F1CA186F2E8A00FF90F1 /* MessageRecipient.m */,
+				97E0F1C9186F2E8A00FF90F1 /* MessageUser.h */,
+				97E0F1CA186F2E8A00FF90F1 /* MessageUser.m */,
 				97E0F1CC186F2F0400FF90F1 /* SendMessageCommand.h */,
 				97E0F1CD186F2F0400FF90F1 /* SendMessageCommand.m */,
 				97E0F1D2186F32DF00FF90F1 /* MessageService.h */,
@@ -678,7 +678,7 @@
 				9746C3E018242F82009FDF0B /* UserRepository.m in Sources */,
 				97A031F418610C3D00AEDE8D /* Base64.m in Sources */,
 				974A4FD518512E6A009C9422 /* UserMessageListViewController.m in Sources */,
-				97E0F1CB186F2E8A00FF90F1 /* MessageRecipient.m in Sources */,
+				97E0F1CB186F2E8A00FF90F1 /* MessageUser.m in Sources */,
 				97F75085184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m in Sources */,
 				97E0F1D1186F2F2400FF90F1 /* DataHelper.m in Sources */,
 				97C7EA82186DE037000D161F /* UserWriteMessageViewController.m in Sources */,
