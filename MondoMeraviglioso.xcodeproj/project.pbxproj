@@ -67,6 +67,8 @@
 		97E0F1D1186F2F2400FF90F1 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1D0186F2F2400FF90F1 /* DataHelper.m */; };
 		97E0F1D4186F32DF00FF90F1 /* MessageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1D3186F32DF00FF90F1 /* MessageService.m */; };
 		97E0F1D9186F5B4300FF90F1 /* ChooseImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E0F1D8186F5B4300FF90F1 /* ChooseImageViewController.m */; };
+		97E7B7671872372E00F214A9 /* NSDate+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7B7661872372E00F214A9 /* NSDate+Formatting.m */; };
+		97E7B76A1872477700F214A9 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E7B7691872477700F214A9 /* NSString+Utilities.m */; };
 		97F75083184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F7507C184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m */; };
 		97F75084184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F7507E184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.m */; };
 		97F75085184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F75080184A003E00E0CCAA /* TPKeyboardAvoidingTableView.m */; };
@@ -188,6 +190,10 @@
 		97E0F1D3186F32DF00FF90F1 /* MessageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageService.m; sourceTree = "<group>"; };
 		97E0F1D7186F5B4300FF90F1 /* ChooseImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseImageViewController.h; sourceTree = "<group>"; };
 		97E0F1D8186F5B4300FF90F1 /* ChooseImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseImageViewController.m; sourceTree = "<group>"; };
+		97E7B7651872372E00F214A9 /* NSDate+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatting.h"; sourceTree = "<group>"; };
+		97E7B7661872372E00F214A9 /* NSDate+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatting.m"; sourceTree = "<group>"; };
+		97E7B7681872477600F214A9 /* NSString+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utilities.h"; sourceTree = "<group>"; };
+		97E7B7691872477700F214A9 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
 		97F7507B184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		97F7507C184A003E00E0CCAA /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		97F7507D184A003E00E0CCAA /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -415,6 +421,10 @@
 				97A031F61861139800AEDE8D /* ImageHelper.m */,
 				97E0F1CF186F2F2400FF90F1 /* DataHelper.h */,
 				97E0F1D0186F2F2400FF90F1 /* DataHelper.m */,
+				97E7B7651872372E00F214A9 /* NSDate+Formatting.h */,
+				97E7B7661872372E00F214A9 /* NSDate+Formatting.m */,
+				97E7B7681872477600F214A9 /* NSString+Utilities.h */,
+				97E7B7691872477700F214A9 /* NSString+Utilities.m */,
 			);
 			name = Infrastructure;
 			sourceTree = "<group>";
@@ -665,6 +675,7 @@
 				97094F0D1825934000A881BA /* MainViewController.m in Sources */,
 				979E02DC18396BC500B932D9 /* SBJsonStreamWriter.m in Sources */,
 				4ECC0633182057B90000CD59 /* Location.m in Sources */,
+				97E7B76A1872477700F214A9 /* NSString+Utilities.m in Sources */,
 				979E02DD18396BC500B932D9 /* SBJsonStreamWriterState.m in Sources */,
 				97E0F1C7186F2C1D00FF90F1 /* Message.m in Sources */,
 				97E0F1CE186F2F0400FF90F1 /* SendMessageCommand.m in Sources */,
@@ -695,6 +706,7 @@
 				97A46E8A18707FC0007836F2 /* MessageCell.m in Sources */,
 				974C6E7B185A5A19006616BA /* JsonClient.m in Sources */,
 				4ECC0605182044F90000CD59 /* main.m in Sources */,
+				97E7B7671872372E00F214A9 /* NSDate+Formatting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

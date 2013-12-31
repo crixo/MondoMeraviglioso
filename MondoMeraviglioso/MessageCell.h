@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MessageCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *senderScreenNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

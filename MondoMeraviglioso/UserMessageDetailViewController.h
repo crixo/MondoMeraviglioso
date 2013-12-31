@@ -10,4 +10,6 @@
 
 @interface UserMessageDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSString *messageKey;
+
 @end

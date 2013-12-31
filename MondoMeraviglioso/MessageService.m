@@ -63,11 +63,35 @@
      }];
 }
 
+-(void) getMessageByKey:(NSString *)key
+            success:(void (^)(Message *message))success
+            ko:(void (^)(NSError *))ko
+{
+    NSString *url = [NSString stringWithFormat:@"user-message-detail.php?key=%@",
+                     key];
+    
+    [jsonClient get:url
+             success:^(NSDictionary *jsonResult)
+     {
+         NSLog(@"Getting message by key %@: %@", key, jsonResult);
+         Message *message = [[Message alloc] initWithDictionary:jsonResult];
+         success(message);
+     }
+             failure:^(NSError *error)
+     {
+         NSLog(@"Getting message by key %@ failed: %@", key, [error localizedDescription]);
+         ko(error);
+     }];
+}
+
 -(void) getMessagesFor:(NSString *)userKey
                success:(void (^)(NSArray *messages))success ko:(void (^)(NSError *))ko
 {
-    [jsonClient get:@"user-message-list.php"
-             success:^(NSDictionary *jsonResult)
+    NSString *url = [NSString stringWithFormat:@"user-messages-received.php?userKey=%@",
+                     userKey];
+    
+    [jsonClient get:url
+            success:^(NSDictionary *jsonResult)
      {
          NSLog(@"Getting messages for %@: %@", userKey, jsonResult);
          NSMutableArray *messages = [[NSMutableArray alloc]init];
@@ -79,7 +103,7 @@
          
          success(messages);
      }
-             failure:^(NSError *error)
+            failure:^(NSError *error)
      {
          NSLog(@"Getting messages for %@ failed: %@", userKey, [error localizedDescription]);
          ko(error);

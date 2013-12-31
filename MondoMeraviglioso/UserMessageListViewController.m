@@ -8,9 +8,12 @@
 
 #import "UserMessageListViewController.h"
 #import "Message.h"
+#import "MessageUser.h"
 #import "MessageCell.h"
 #import "User.h"
 #import "UserService.h"
+#import "MessageService.h"
+#import "UserMessageDetailViewController.h"
 
 @interface UserMessageListViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -33,7 +36,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Message List";
-    //[self.navigationController setNavigationBarHidden:NO];
+    
+    UserService *userService = [UserService sharedUserService];
+    MessageService *messageService = [MessageService shared];
+    
+    [messageService getMessagesFor:userService.currentUser.key success:^(NSArray *messages) {
+        self.messages = messages;
+        [self.tableView reloadData];
+    } ko:^(NSError *error) {
+        //
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,9 +66,27 @@
     
     Message *message = [self.messages objectAtIndex:indexPath.row];
     
-    UserService *userService = [UserService sharedUserService];
+    cell.senderScreenNameLabel.text = message.sender.screenName;
+    
+    cell.titleLabel.text = message.title;
     
     return cell;
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"MessageDetailSegue"])
+    {
+        UserMessageDetailViewController *vewController =
+            segue.destinationViewController;
+        
+        NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
+        
+        Message *selectedMessage =[self.messages objectAtIndex:selectedIndex.row];
+        
+        vewController.messageKey = selectedMessage.key;
+        
+        [self.tableView deselectRowAtIndexPath:selectedIndex animated:YES];
+    }}
 
 @end

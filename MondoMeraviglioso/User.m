@@ -10,6 +10,7 @@
 #import "DataHelper.h"
 #import "Base64.h"
 #import <CoreLocation/CoreLocation.h>
+#import "NSString+Utilities.h"
 
 @implementation User
 
@@ -43,7 +44,7 @@
     self.screenName = [dic objectForKey:@"screenName"];
     
     NSString *thumbnail = [dic objectForKey:@"thumbnail"];
-    if(thumbnail != (id)[NSNull null] && thumbnail.length > 0 )
+    if(thumbnail != (id)[NSNull null] && thumbnail.length > 0)
     {
         [Base64 initialize];
         NSData * data = [Base64 decode:thumbnail];

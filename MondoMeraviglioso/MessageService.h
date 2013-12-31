@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 @class SendMessageCommand;
+@class Message;
+
 
 @interface MessageService : NSObject
 
@@ -16,6 +18,10 @@
 - (void) send:(SendMessageCommand*) command
              success:(void (^)())success
                   ko:(void (^)(NSError *error)) ko;
+
+- (void) getMessageByKey:(NSString*) key
+                success:(void (^)(Message *message))success
+                     ko:(void (^)(NSError *error)) ko;
 
 - (void) getMessagesFor:(NSString*) userKey
       success:(void (^)(NSArray *messages))success

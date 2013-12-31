@@ -8,6 +8,7 @@
 
 #import "Message.h"
 #import "MessageUser.h"
+#import "NSString+Utilities.h"
 
 @implementation Message
 
@@ -21,8 +22,16 @@
                                                  AndScreenName:[dic objectForKey:@"recipientScreenName"]];
     self.title = [dic objectForKey:@"title"];
     self.body = [dic objectForKey:@"message"];
-    self.sentAt = [dic objectForKey:@"sentAt"];
-    self.readAt = [dic objectForKey:@"readAt"];
+    
+    NSString *sentAtAsString = [dic objectForKey:@"sentAt"];
+    self.sentAt = [sentAtAsString toDate];
+    
+    NSString* readAtAsString = [dic objectForKey:@"readAt"];
+    if(readAtAsString != (id)[NSNull null] && readAtAsString.length > 0)
+    {
+        self.readAt = [readAtAsString toDate];
+    }
+    
     self.thumbnail = [dic objectForKey:@"thumbnail"];
     
     return self;

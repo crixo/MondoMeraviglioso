@@ -7,6 +7,10 @@
 //
 
 #import "UserMessageDetailViewController.h"
+#import "Message.h"
+#import "MessageUser.h"
+#import "MessageService.h"
+#import "NSDate+Formatting.h"
 
 @interface UserMessageDetailViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *senderLabel;
@@ -19,19 +23,21 @@
 
 @implementation UserMessageDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    MessageService *messageService = [MessageService shared];
+    [messageService getMessageByKey:self.messageKey success:^(Message *message) {
+        self.title = message.title;
+        self.bodyTextView.text = message.body;
+        self.senderLabel.text = message.sender.screenName;
+        self.sentAtLabel.text = [message.sentAt toLocal];
+    } ko:^(NSError *error) {
+        //
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
